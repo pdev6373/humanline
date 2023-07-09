@@ -1,0 +1,53 @@
+:root {
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /*  BACKGROUNDS */
+    --backgrond-400: rgba(17, 24, 39, 1);
+
+    /* COLORS */
+    --color-400: rbg(255, 255, 255);
+
+    /* FONTS */
+
+    /* BORDER */
+    --border-400: 1px solid rgba(104, 117, 136);
+    --border-400-focused: 1px solid rgba(39, 163, 118);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+input,
+textarea {
+  font: inherit;
+  border: none;
+  outline: none;
+  background: inherit;
+}
+
+body {
+  background: var(--backgrond-400);
+}

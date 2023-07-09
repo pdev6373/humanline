@@ -1,0 +1,78 @@
+.wrapper {
+  display: flex;
+  text-align: center;
+}
+
+.imageWrapper,
+.formWrapper {
+  width: 50%;
+}
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 130px 4.17vw 24px;
+  min-height: 100vh;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ornamentWrapper {
+  position: unset !important;
+  width: 100px;
+}
+
+.ornamentImage {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: 100% !important;
+}
+
+.imageWrapper {
+  position: unset !important;
+  /* min-width: 450px; */
+  height: 100vh;
+}
+
+.image {
+  object-fit: cover;
+  width: 100% !important;
+  position: relative !important;
+  height: 100% !important;
+  object-position: top center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.29;
+  color: var(--color-400);
+  margin-bottom: 32px;
+}
+
+.footer {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.copyRight {
+  color: rgba(104, 117, 136, 1);
+}
+
+.formOptions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,41 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  text-align: left;
+  width: 100%;
+  max-width: 30rem;
+  margin-inline: auto;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.57;
+}
+
+.labelWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.14em;
+}
+
+.required {
+  color: rgba(224, 49, 55, 1);
+}
+
+.inputWrapper {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.57;
+  border: var(--border-400);
+  border-radius: 0.57em;
+  overflow: hidden;
+}
+
+.inputWrapper:focus-within {
+  border: var(--border-400-focused);
+}
+
+.input {
+  width: 100%;
+  color: rgba(104, 117, 136, 1);
+  padding: 1.2em 1.4em;
+}
