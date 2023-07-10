@@ -1,0 +1,15 @@
+.button {
+  border: var(--bdr-social);
+  padding: var(--sp);
+  border-radius: var(--br);
+  color: var(--clr-main);
+  gap: var(--sp-300);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.0125em;
+}
+
+.buttonText {
+  font-weight: 500;
+}

@@ -1,0 +1,16 @@
+.button {
+  font-size: var(--fs);
+  line-height: var(--lh);
+  border-radius: var(--br);
+  background: var(--bg-secondary);
+  color: var(--clr-button);
+  padding: var(--sp);
+  font-weight: 700;
+  letter-spacing: 0.01875em;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  color: var(--clr-secondary);
+  background: var(--bg-main-200);
+}
