@@ -17,6 +17,7 @@ export interface InputType extends PlainInputType {
 
 export interface ButtonType extends PlainButtonType {
   isDisabled?: boolean;
+  type?: "primary" | "secondary";
 }
 
 export interface SocialButtonType extends PlainButtonType {
@@ -34,4 +35,18 @@ export interface SuccessType {
   text: string;
   buttonText: string;
   onClick: any;
+}
+
+export interface LineBackgroundType {
+  children: any;
+  hasFooter?: boolean;
+}
+
+interface RenderAppropriateComponentProps {
+  mobileComponent: any;
+  webComponent: any;
+}
+
+export interface RenderAppropriateComponentType {
+  components: RenderAppropriateComponentProps;
 }

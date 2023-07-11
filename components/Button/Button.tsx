@@ -5,12 +5,13 @@ export default function Button({
   onClick,
   children,
   isDisabled = false,
+  type = "primary",
 }: ButtonType) {
   return (
     <button
       disabled={isDisabled}
       onClick={!isDisabled && onClick}
-      className={styles.button}
+      className={type === "primary" ? styles.button : styles.buttonSecondary}
     >
       {children}
     </button>

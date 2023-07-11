@@ -7,38 +7,50 @@
 
 .heroWrapper,
 .body {
-  width: 50%;
+  flex-basis: 0;
+  flex-grow: 1;
+  /* width: 50%; */
   flex-shrink: 0;
+}
+
+.heroWrapper {
+  display: none;
+  position: unset !important;
+  height: 100vh;
+}
+
+.heroImage {
+  position: relative;
+  object-fit: cover;
+  height: 100% !important;
+  object-position: top center;
 }
 
 .body {
   display: flex;
   flex-direction: column;
-  padding: 12.695vh 4.16667vw 1.5rem;
+  gap: 32px;
+  padding: 24px min(24px, 5%);
   min-height: 100vh;
   overflow-y: auto;
 }
 
-.formWrapper {
-  padding-inline: 4.16667vw;
+.logo {
+  margin-inline: auto;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+.title {
+  font-size: var(--fs-700);
+  line-height: var(--lh-700);
+  font-weight: 700;
 }
 
 .ornamentWrapper {
+  display: none;
   font-size: clamp(0.75rem, 1.11111vw, 1rem);
   width: clamp(3.75rem, 6.945vw, 6.25rem);
   position: unset !important;
   margin-bottom: 1.9em;
-}
-
-.heroWrapper {
-  position: unset !important;
-  height: 100vh;
 }
 
 .ornament {
@@ -47,18 +59,10 @@
   height: 100% !important;
 }
 
-.hero {
-  position: relative;
-  object-fit: cover;
-  height: 100% !important;
-  object-position: top center;
-}
-
-.title {
-  font-size: var(--fs-700);
-  line-height: var(--lh-700);
-  font-weight: 700;
-  margin-bottom: 1.33em;
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .formOptions {
@@ -67,12 +71,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2.2857em;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+/* .forgotPassword {
+  font-weight: 500;
+  color: rgba(160, 174, 192, 1);
+} */
+
+.rememberMe {
+  flex-grow: 100;
 }
 
 .forgotPassword {
+  flex-grow: 1;
   font-weight: 500;
-  color: rgba(160, 174, 192, 1);
+  color: rgba(104, 117, 136, 1); /* CHECK FOR CHECKBOX MOBILE COLOR ALSO */
+}
+
+.callToAction {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
 }
 
 .loginDivider {
@@ -84,7 +105,6 @@
   justify-content: center;
   align-items: center;
   gap: 1.14em;
-  margin-block: 1.857em;
 }
 
 .loginDivider::before,
@@ -97,34 +117,73 @@
 
 .socialButtonWrapper {
   display: flex;
-  gap: 1.14em;
-  font-size: var(--fs);
-  line-height: var(--lh);
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
-.authChange {
-  margin-block: 2.2857em 3.4em;
-  font-size: var(--fs-300);
-  line-height: var(--lh-300);
-  font-weight: 500;
-  color: rgba(104, 117, 136, 1);
-}
-
-.authChangeLink {
-  color: rgba(39, 163, 118, 1);
-}
-
+.authChange,
 .footer {
   font-size: var(--fs-300);
   line-height: var(--lh-300);
   font-weight: 500;
+  color: rgba(160, 174, 192, 1);
+}
+
+.authChangeLink {
+  color: rgba(39, 163, 118, 1);
+  white-space: nowrap;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
+
+/* .footer {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.71em;
   margin-top: auto;
+} */
+
+/* .copyRight {
+  color: rgba(104, 117, 136, 1);
+} */
+
+/* .authChange {
+  margin-block: 2.2857em 3.4em;
+  font-size: var(--fs-300);
+  line-height: var(--lh-300);
+  font-weight: 500;
+  color: rgba(104, 117, 136, 1);
+} */
+
+/* .formWrapper {
+    padding-inline: 4.16667vw;
+  } */
+
+.allRightsReserved {
+  white-space: nowrap;
 }
 
-.copyRight {
-  color: rgba(104, 117, 136, 1);
+.termsAndPolicy {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .heroWrapper,
+  .ornamentWrapper {
+    display: block;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .body {
+    padding: 12.695vh 4.16667vw 1.5rem;
+  }
 }

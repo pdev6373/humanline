@@ -2,7 +2,7 @@
 import { Success } from "@/components";
 import { useRouter } from "next/navigation";
 
-export default function CreateCompanySuccessful() {
+export default function PasswordChangedSuccessful() {
   const router = useRouter();
 
   const loginHandler = () => router.push("/login");
@@ -11,8 +11,8 @@ export default function CreateCompanySuccessful() {
     <Success
       buttonText="Back to Login"
       onClick={loginHandler}
-      title="Your successfully created your company"
-      text="Thanks for being part of the Humanline! family, we are happy to have you onboard."
+      title="Your successfully changed your password"
+      text="Always remember the password for your account at Humanline!"
     />
   );
 }

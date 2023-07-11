@@ -1,4 +1,6 @@
 .button {
+  font-size: var(--fs);
+  line-height: var(--lh);
   border: var(--bdr-social);
   padding: var(--sp);
   border-radius: var(--br);
@@ -7,7 +9,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  letter-spacing: 0.0125em;
+  letter-spacing: 0.20000000298023224px;
+  min-width: 155px;
 }
 
 .buttonText {
