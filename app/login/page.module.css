@@ -30,7 +30,7 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-  padding: 24px min(24px, 5%);
+  padding: 24px min(24px, 10%);
   min-height: 100vh;
   overflow-y: auto;
 }
