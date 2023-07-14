@@ -1,16 +1,12 @@
 .wrapper {
   display: flex;
   text-align: center;
-  overflow-y: hidden;
-  height: 100vh;
 }
 
 .heroWrapper,
 .body {
-  flex-basis: 0;
   flex-grow: 1;
-  /* width: 50%; */
-  flex-shrink: 0;
+  min-width: 50%;
 }
 
 .heroWrapper {
@@ -23,6 +19,7 @@
   position: relative;
   object-fit: cover;
   height: 100% !important;
+  width: 100%;
   object-position: top center;
 }
 
@@ -32,7 +29,8 @@
   gap: 32px;
   padding: 24px min(24px, 10%);
   min-height: 100vh;
-  overflow-y: auto;
+  max-width: 650px;
+  margin-inline: auto;
 }
 
 .logo {
@@ -173,7 +171,13 @@
   display: none;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 500px) {
+  .body {
+    padding: 6vh 4.16667vw 1.5rem;
+  }
+}
+
+@media (min-width: 900px) {
   .heroWrapper,
   .ornamentWrapper {
     display: block;
@@ -184,6 +188,28 @@
   }
 
   .body {
-    padding: 12.695vh 4.16667vw 1.5rem;
+    overflow-y: auto;
+  }
+
+  .wrapper {
+    overflow-y: hidden;
+    height: 100vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  .termsAndPolicy {
+    display: block;
+  }
+
+  .body {
+    padding-top: 12.695vh;
+  }
+
+  .form,
+  .callToAction {
+    max-width: 480px;
+    width: 100%;
+    margin-inline: auto;
   }
 }
