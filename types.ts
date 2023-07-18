@@ -1,3 +1,5 @@
+import { HTMLInputTypeAttribute } from "react";
+
 interface PlainButtonType {
   children: any;
   onClick: any;
@@ -11,7 +13,7 @@ interface PlainInputType {
 export interface InputType extends PlainInputType {
   label: string;
   placeholder: string;
-  type: string;
+  type: HTMLInputTypeAttribute;
   errors: string[];
   isRequired?: boolean;
   displayMetRequirements?: boolean;

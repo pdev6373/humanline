@@ -75,7 +75,7 @@ export default function Input({
             )
           : showErrorHandler() &&
             errors.map((error) => (
-              <div className={styles.errorWrapper}>
+              <div className={styles.errorWrapper} key={error}>
                 <Image
                   src="/assets/alert-circle.svg"
                   alt="alert"

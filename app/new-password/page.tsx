@@ -63,22 +63,6 @@ export default function NewPassword() {
       !(validatePassword.metRequirement && !!confirmPassword.length)
     );
     validateForm();
-
-    // setPasswordRequirements(
-    //   passwordRequirements.map((requirement) =>
-    //     requirement.checkIsMet(password)
-    //       ? {
-    //           requirement: requirement.requirement,
-    //           isMet: true,
-    //           checkIsMet: requirement.checkIsMet,
-    //         }
-    //       : {
-    //           requirement: requirement.requirement,
-    //           isMet: false,
-    //           checkIsMet: requirement.checkIsMet,
-    //         }
-    //   )
-    // );
   }, [password]);
 
   const nextHandler = () => router.push("/otp-verification");
