@@ -50,29 +50,31 @@ export default function Input({
 
       <div className={styles.errors}>
         {displayMetRequirements
-          ? requirements.map((requirement) =>
-              errors.includes(requirement) ? (
-                <div className={styles.errorDisplayWrapper}>
-                  <Image
-                    src="/assets/close-circle.svg"
-                    alt="alert"
-                    width={18}
-                    height={18}
-                  />
-                  <p className={styles.requirementError}>{requirement}</p>
-                </div>
-              ) : (
-                <div className={styles.errorDisplayWrapper}>
-                  <Image
-                    src="/assets/tick-circle.svg"
-                    alt="alert"
-                    width={18}
-                    height={18}
-                  />
-                  <p className={styles.requirementMetError}>{requirement}</p>
-                </div>
-              )
-            )
+          ? requirements.map((requirement) => (
+              <div className={styles.errorDisplayWrapper} key={requirement}>
+                {errors.includes(requirement) ? (
+                  <>
+                    <Image
+                      src="/assets/close-circle.svg"
+                      alt="alert"
+                      width={18}
+                      height={18}
+                    />
+                    <p className={styles.requirementError}>{requirement}</p>
+                  </>
+                ) : (
+                  <>
+                    <Image
+                      src="/assets/tick-circle.svg"
+                      alt="alert"
+                      width={18}
+                      height={18}
+                    />
+                    <p className={styles.requirementMetError}>{requirement}</p>
+                  </>
+                )}
+              </div>
+            ))
           : showErrorHandler() &&
             errors.map((error) => (
               <div className={styles.errorWrapper} key={error}>
