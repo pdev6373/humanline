@@ -13,6 +13,7 @@ export default function SocialLogin() {
       >
         Google
       </SocialButton>
+
       <SocialButton socialIcon="/assets/apple.svg" onClick={appleLoginHandler}>
         Apple
       </SocialButton>
