@@ -21,8 +21,8 @@ export default function Input({
     value.length && setHasValueChangedOnce(true);
   }, [value]);
 
-  const inputChangeHandler = (e: any) => setValue(e.target.value);
   const blurHandler = () => setIsBlur(true);
+  const inputChangeHandler = (e: any) => setValue(e.target.value);
   const showErrorHandler = () =>
     !!errors.length && hasValueChangedOnce && isBlur && !!value.length;
 
