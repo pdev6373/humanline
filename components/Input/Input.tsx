@@ -14,8 +14,8 @@ export default function Input({
   requirements = [],
   isRequired = true,
 }: InputType) {
-  const [isBlur, setIsBlur] = useState(false);
   const [hasValueChangedOnce, setHasValueChangedOnce] = useState(false);
+  const [isBlur, setIsBlur] = useState(false);
 
   useLayoutEffect(() => {
     value.length && setHasValueChangedOnce(true);
