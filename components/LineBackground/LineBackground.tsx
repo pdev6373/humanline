@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./LineBackground.module.css";
 import { LineBackgroundType } from "@/types";
+import Footer from "../Footer/Footer";
 
 export default function LineBackground({
   children,
@@ -20,15 +21,7 @@ export default function LineBackground({
 
       <main className={styles.innerWrapper}>{children}</main>
 
-      {hasFooter && (
-        <footer className={styles.footer}>
-          <p className={styles.copyRight}>
-            © 2023 Humanline . Alrights reserved.
-          </p>
-          <p className={styles.terms}>Terms & Conditions</p>
-          <p className={styles.policy}>Privacy Policy</p>
-        </footer>
-      )}
+      {hasFooter && <Footer />}
     </div>
   );
 }

@@ -7,7 +7,6 @@
 .text {
   font-size: var(--fs-500);
   line-height: var(--lh-500);
-  max-width: 400px;
 }
 
 .mainWrapper {
@@ -18,27 +17,8 @@
   text-align: center;
 }
 
-.requirements {
+.form {
   display: flex;
-  flex-wrap: wrap;
-  margin-block: 16px 24px;
-  gap: 4px;
-}
-
-.requirement {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: calc(50% - 2px);
-}
-
-.requirementText,
-.requirementTextChecked {
-  font-size: var(--fs-300);
-  line-height: var(--lh-300);
-  color: var(--clr-alert);
-}
-
-.requirementTextChecked {
-  color: rgba(39, 163, 118, 1);
+  flex-direction: column;
+  gap: 24px;
 }

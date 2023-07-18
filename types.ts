@@ -12,7 +12,10 @@ export interface InputType extends PlainInputType {
   label: string;
   placeholder: string;
   type: string;
+  errors: string[];
   isRequired?: boolean;
+  displayMetRequirements?: boolean;
+  requirements?: string[];
 }
 
 export interface ButtonType extends PlainButtonType {
@@ -49,4 +52,20 @@ interface RenderAppropriateComponentProps {
 
 export interface RenderAppropriateComponentType {
   components: RenderAppropriateComponentProps;
+}
+
+export interface AuthChangeType {
+  href: string;
+  text: string;
+  action: "Create Account" | "Login Here";
+}
+
+export interface InputValidateTypeProps {
+  type: "email" | "password" | "fullname" | "compare";
+  value: string;
+  valueCompare?: string;
+}
+
+export interface AuthDividerProps {
+  text: string;
 }

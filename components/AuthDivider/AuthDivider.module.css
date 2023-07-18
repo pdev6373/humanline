@@ -1,0 +1,18 @@
+.authDivider {
+  font-size: var(--fs-300);
+  line-height: var(--lh-300);
+  font-weight: 500;
+  color: rgba(104, 117, 136, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.14em;
+}
+
+.authDivider::before,
+.authDivider::after {
+  content: "";
+  height: 0.0625rem;
+  background: rgba(50, 59, 73, 1);
+  flex-grow: 1;
+}

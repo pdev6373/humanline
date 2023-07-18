@@ -1,0 +1,19 @@
+.authChange {
+  font-size: var(--fs-300);
+  line-height: var(--lh-300);
+  font-weight: 500;
+  color: rgba(160, 174, 192, 1);
+}
+
+.authChangeLink {
+  color: rgba(39, 163, 118, 1);
+  white-space: nowrap;
+}
+
+/* .authChange {
+  margin-block: 2.2857em 3.4em;
+  font-size: var(--fs-300);
+  line-height: var(--lh-300);
+  font-weight: 500;
+  color: rgba(104, 117, 136, 1);
+} */

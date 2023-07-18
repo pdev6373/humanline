@@ -5,7 +5,7 @@
   border-radius: var(--br);
   background: var(--bg-secondary);
   color: var(--clr-button);
-  padding: var(--sp);
+  padding: calc(var(--sp) + 2px);
   font-weight: 700;
   letter-spacing: 0.01875em;
 }

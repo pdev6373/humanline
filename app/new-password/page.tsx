@@ -4,50 +4,81 @@ import styles from "./page.module.css";
 import { Button, Input, LineBackground } from "@/components";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import useValidateInput from "@/hooks/useValidateInput";
+
+const passwordRequirements = [
+  "Password must be at least 8 characters",
+  "Password must contain at least one number",
+  "Password must contain at least one uppercase letter",
+  "Password must contain st least one lowercase letter",
+];
 
 export default function NewPassword() {
   const [password, setPassword] = useState("");
+  const [passwordErrors, setPasswordErrors] = useState([] as string[]);
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [passwordRequirements, setPasswordRequirements] = useState([
-    {
-      requirement: "8 characters",
-      isMet: false,
-      checkIsMet: (value: string) => value.length >= 8,
-    },
-    {
-      requirement: "Number (0-9)",
-      isMet: false,
-      checkIsMet: (value: string) => /\d/.test(value),
-    },
-    {
-      requirement: "Uppercase letter (A-Z)",
-      isMet: false,
-      checkIsMet: (value: string) => /[A-Z]/.test(value),
-    },
-    {
-      requirement: "Lowercase letter (a-z)",
-      isMet: false,
-      checkIsMet: (value: string) => /[a-z]/.test(value),
-    },
-  ]);
+  const [isDisabled, setIsDisabled] = useState(true);
+  const [confirmPasswordErrors, setConfirmPasswordErrors] = useState(
+    [] as string[]
+  );
+
+  const validateInput = useValidateInput();
+
+  const validatePassword = validateInput({
+    type: "password",
+    value: password,
+  });
+
+  const validateConfirmPassword = validateInput({
+    type: "compare",
+    value: password,
+    valueCompare: confirmPassword,
+  });
+
   const router = useRouter();
 
+  const validateForm = () => {
+    if (
+      validateConfirmPassword.metRequirement &&
+      validatePassword.metRequirement
+    ) {
+      setPasswordErrors([]);
+      setConfirmPasswordErrors([]);
+      return true;
+    }
+
+    if (!validatePassword.metRequirement)
+      setPasswordErrors(validatePassword.errors);
+    else setPasswordErrors([]);
+
+    if (!validateConfirmPassword.metRequirement)
+      setConfirmPasswordErrors(validateConfirmPassword.errors);
+    else setConfirmPasswordErrors([]);
+
+    return false;
+  };
+
   useEffect(() => {
-    setPasswordRequirements(
-      passwordRequirements.map((requirement) =>
-        requirement.checkIsMet(password)
-          ? {
-              requirement: requirement.requirement,
-              isMet: true,
-              checkIsMet: requirement.checkIsMet,
-            }
-          : {
-              requirement: requirement.requirement,
-              isMet: false,
-              checkIsMet: requirement.checkIsMet,
-            }
-      )
+    setIsDisabled(
+      !(validatePassword.metRequirement && !!confirmPassword.length)
     );
+    validateForm();
+
+    // setPasswordRequirements(
+    //   passwordRequirements.map((requirement) =>
+    //     requirement.checkIsMet(password)
+    //       ? {
+    //           requirement: requirement.requirement,
+    //           isMet: true,
+    //           checkIsMet: requirement.checkIsMet,
+    //         }
+    //       : {
+    //           requirement: requirement.requirement,
+    //           isMet: false,
+    //           checkIsMet: requirement.checkIsMet,
+    //         }
+    //   )
+    // );
   }, [password]);
 
   const nextHandler = () => router.push("/otp-verification");
@@ -64,40 +95,17 @@ export default function NewPassword() {
         </p>
       </div>
 
-      <div>
+      <form className={styles.form}>
         <Input
           label="New Password"
           placeholder="Enter your new password"
           type="password"
           value={password}
           setValue={setPassword}
+          errors={passwordErrors}
+          displayMetRequirements={true}
+          requirements={passwordRequirements}
         />
-
-        <div className={styles.requirements}>
-          {passwordRequirements.map((requirement) => (
-            <div key={requirement.requirement} className={styles.requirement}>
-              <Image
-                src={
-                  requirement.isMet
-                    ? "/assets/tick-circle.svg"
-                    : "/assets/close-circle.svg"
-                }
-                alt="tick image"
-                width={16}
-                height={16}
-              />
-              <p
-                className={
-                  requirement.isMet
-                    ? styles.requirementTextChecked
-                    : styles.requirementText
-                }
-              >
-                {requirement.requirement}
-              </p>
-            </div>
-          ))}
-        </div>
 
         <Input
           label="Confirmation New Password"
@@ -105,8 +113,9 @@ export default function NewPassword() {
           type="password"
           value={confirmPassword}
           setValue={setConfirmPassword}
+          errors={confirmPasswordErrors}
         />
-      </div>
+      </form>
 
       <Button onClick={nextHandler}>Submit</Button>
     </LineBackground>

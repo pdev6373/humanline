@@ -21,22 +21,70 @@
   color: var(--clr-alert);
 }
 
-.inputWrapper {
+.inputWrapper,
+.inputWrapperError {
   border: var(--bdr);
   border-radius: var(--br);
   overflow: hidden;
+}
+
+.inputWrapperError {
+  border: var(--bdr-alert);
 }
 
 .inputWrapper:focus-within {
   border: var(--bdr-secondary);
 }
 
-.input,
+.input {
+  width: 100%;
+  padding: var(--sp-500) var(--sp-600);
+  color: #fff;
+}
+
 .input::placeholder {
   color: var(--clr-input);
 }
 
-.input {
-  width: 100%;
-  padding: var(--sp-500) var(--sp-600);
+.errors,
+.errorsShow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.errorWrapper,
+.errorDisplayWrapper {
+  display: flex;
+  gap: 4px;
+  text-align: left;
+}
+
+.errorDisplayWrapper {
+  gap: 8px;
+}
+
+.error,
+.requirementError,
+.requirementMetError {
+  min-height: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.error {
+  font-size: var(--fs-200);
+  line-height: var(--lh-200);
+  color: var(--clr-alert);
+}
+
+.requirementError,
+.requirementMetError {
+  font-size: var(--fs-300);
+  line-height: var(--lh-300);
+  color: var(--clr-alert);
+}
+
+.requirementMetError {
+  color: var(--clr-success);
 }

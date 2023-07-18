@@ -11,14 +11,16 @@
   --clr-input: rgba(160, 174, 192, 1);
   --clr-button: rgba(255, 255, 255, 1);
   --clr-alert: rgba(224, 49, 55, 1);
+  --clr-success: rgba(39, 163, 118, 1);
 
   /* FONTS */
   --fs-900: 2.5rem; /* 40px */
   --fs-800: 2rem; /* 32px */
   --fs-700: 1.5rem; /* 24px */
-  --fs--500: 1.125rem; /* 18px */
+  --fs-500: 1.125rem; /* 18px */
   --fs: 1rem; /* 16px */
   --fs-300: 0.875rem; /* 14px */
+  --fs-200: 0.75rem; /* 12px */
 
   /* LINE HEIGHT */
   --lh-900: 1.2;
@@ -27,11 +29,13 @@
   --lh-500: 1.5; /* 27px */
   --lh: 1;
   --lh-300: 1.57; /* 22px */
+  --lh-200: 1.6; /* 19.2px */
 
   /* BORDER */
   --bdr: 1px solid rgba(233, 234, 236, 1);
   --bdr-social: 1px solid rgba(233, 234, 236, 1);
   --bdr-secondary: 1px solid rgba(12, 175, 96, 1);
+  --bdr-alert: 1px solid var(--clr-alert);
 
   /* BORDER RADIUS */
   --br: 8px;

@@ -2,15 +2,36 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { Button, Input, LineBackground } from "@/components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import useValidateInput from "@/hooks/useValidateInput";
 
 export default function ForgotPassword() {
-  const [email, setEmail] = useState("");
   const router = useRouter();
+  const validateInput = useValidateInput();
+  const [isDisabled, setIsDisabled] = useState(true);
+  const [email, setEmail] = useState("");
+  const [emailErrors, setEmailErrors] = useState([] as string[]);
 
-  const nextHandler = () => router.push("/new-password");
+  const validateEmail = validateInput({ type: "email", value: email });
+
   const backToLoginHandler = () => router.push("/login");
+  const nextHandler = () => validateForm() && router.push("/new-password");
+
+  const validateForm = () => {
+    if (validateEmail.metRequirement) {
+      setEmailErrors([]);
+      return true;
+    }
+
+    setEmailErrors(validateEmail.errors);
+    return false;
+  };
+
+  useEffect(() => {
+    setIsDisabled(!email.length);
+    validateForm();
+  }, [email]);
 
   return (
     <LineBackground>
@@ -30,10 +51,13 @@ export default function ForgotPassword() {
         type="email"
         value={email}
         setValue={setEmail}
+        errors={emailErrors}
       />
 
-      <div className={styles.mainWrapper}>
-        <Button onClick={nextHandler}>Next</Button>
+      <div className={styles.buttonWrapper}>
+        <Button onClick={nextHandler} isDisabled={isDisabled}>
+          Next
+        </Button>
         <Button onClick={backToLoginHandler} type="secondary">
           Back to Login
         </Button>

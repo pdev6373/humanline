@@ -11,16 +11,21 @@
 
 .heroWrapper {
   display: none;
-  position: unset !important;
+  position: relative;
   height: 100vh;
+}
+
+.heroImageWrapper {
+  position: unset !important;
+  height: 100%;
 }
 
 .heroImage {
   position: relative;
-  object-fit: cover;
   height: 100% !important;
-  width: 100%;
-  object-position: top center;
+  width: 100% !important;
+  object-position: top left;
+  object-fit: cover;
 }
 
 .body {
@@ -43,24 +48,31 @@
   font-weight: 700;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.callToAction {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/*  */
+
 .ornamentWrapper {
   display: none;
   font-size: clamp(0.75rem, 1.11111vw, 1rem);
   width: clamp(3.75rem, 6.945vw, 6.25rem);
   position: unset !important;
-  margin-bottom: 1.9em;
 }
 
 .ornament {
   position: relative;
   object-fit: cover;
   height: 100% !important;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
 }
 
 .formOptions {
@@ -73,11 +85,6 @@
   gap: 24px;
 }
 
-/* .forgotPassword {
-  font-weight: 500;
-  color: rgba(160, 174, 192, 1);
-} */
-
 .rememberMe {
   flex-grow: 100;
 }
@@ -88,88 +95,14 @@
   color: rgba(104, 117, 136, 1); /* CHECK FOR CHECKBOX MOBILE COLOR ALSO */
 }
 
-.callToAction {
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-}
-
-.loginDivider {
-  font-size: var(--fs-300);
-  line-height: var(--lh-300);
-  font-weight: 500;
-  color: rgba(104, 117, 136, 1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.14em;
-}
-
-.loginDivider::before,
-.loginDivider::after {
-  content: "";
-  height: 0.0625rem;
-  background: rgba(50, 59, 73, 1);
-  flex-grow: 1;
-}
-
-.socialButtonWrapper {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.authChange,
-.footer {
-  font-size: var(--fs-300);
-  line-height: var(--lh-300);
-  font-weight: 500;
-  color: rgba(160, 174, 192, 1);
-}
-
-.authChangeLink {
-  color: rgba(39, 163, 118, 1);
-  white-space: nowrap;
-}
-
-.footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: auto;
-}
-
-/* .footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.71em;
-  margin-top: auto;
-} */
-
-/* .copyRight {
-  color: rgba(104, 117, 136, 1);
-} */
-
-/* .authChange {
-  margin-block: 2.2857em 3.4em;
-  font-size: var(--fs-300);
-  line-height: var(--lh-300);
-  font-weight: 500;
-  color: rgba(104, 117, 136, 1);
-} */
-
 /* .formWrapper {
     padding-inline: 4.16667vw;
   } */
 
-.allRightsReserved {
-  white-space: nowrap;
-}
-
-.termsAndPolicy {
-  display: none;
-}
+/* .forgotPassword {
+  font-weight: 500;
+  color: rgba(160, 174, 192, 1);
+} */
 
 @media (min-width: 500px) {
   .body {
@@ -178,9 +111,14 @@
 }
 
 @media (min-width: 900px) {
-  .heroWrapper,
-  .ornamentWrapper {
+  .wrapper {
+    overflow-y: hidden;
+    height: 100vh;
+  }
+
+  .heroWrapper {
     display: block;
+    flex-direction: column;
   }
 
   .logo {
@@ -191,17 +129,14 @@
     overflow-y: auto;
   }
 
-  .wrapper {
-    overflow-y: hidden;
-    height: 100vh;
+  /*  */
+
+  .ornamentWrapper {
+    display: block;
   }
 }
 
 @media (min-width: 1200px) {
-  .termsAndPolicy {
-    display: block;
-  }
-
   .body {
     padding-top: 12.695vh;
   }
@@ -211,5 +146,11 @@
     max-width: 480px;
     width: 100%;
     margin-inline: auto;
+  }
+}
+
+@media (max-height: 940px) {
+  .body {
+    padding-top: 6vh;
   }
 }

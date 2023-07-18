@@ -1,109 +1,143 @@
 "use client";
+import {
+  Input,
+  Button,
+  Footer,
+  AuthChange,
+  AuthDivider,
+  SocialLogin,
+} from "@/components";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import styles from "./page.module.css";
-import { Button, Input, SocialButton } from "@/components";
-import { useEffect, useState } from "react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import useValidateInput from "@/hooks/useValidateInput";
 
 export default function CreateCompany() {
-  const [name, setName] = useState("");
-  const [workEmail, setWorkEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [isDisabled, setIsDisabled] = useState(true);
   const router = useRouter();
+  const validateInput = useValidateInput();
+
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [workEmail, setWorkEmail] = useState("");
+  const [nameErrors, setNameErrors] = useState([] as string[]);
+  const [isDisabled, setIsDisabled] = useState(true);
+  const [passwordErrors, setPasswordErrors] = useState([] as string[]);
+  const [workEmailErrors, setWorkEmailErrors] = useState([] as string[]);
+
+  const validateName = validateInput({ type: "fullname", value: name });
+  const validateEmail = validateInput({ type: "email", value: workEmail });
+  const validatePassword = validateInput({
+    type: "password",
+    value: password,
+  });
+
+  const validateForm = () => {
+    if (
+      validateName.metRequirement &&
+      validateEmail.metRequirement &&
+      validatePassword.metRequirement
+    ) {
+      setNameErrors([]);
+      setWorkEmailErrors([]);
+      setPasswordErrors([]);
+      return true;
+    }
+
+    if (!validateName.metRequirement) setNameErrors(validateName.errors);
+    else setNameErrors([]);
+
+    if (!validateEmail.metRequirement) setWorkEmailErrors(validateEmail.errors);
+    else setWorkEmailErrors([]);
+
+    if (!validatePassword.metRequirement)
+      setPasswordErrors(validatePassword.errors);
+    else setPasswordErrors([]);
+
+    return false;
+  };
 
   useEffect(() => {
     setIsDisabled(
-      name.length && workEmail.length && password.length ? false : true
+      !(
+        validateName.metRequirement &&
+        validateEmail.metRequirement &&
+        !!password.length
+      )
     );
+    validateForm();
   }, [name, workEmail, password]);
 
   const signupHandler = (e: any) => {
     e.preventDefault();
-    router.push("/create-company-successful");
+    validateForm() && router.push("/create-company-successful");
   };
-  const googleLoginHandler = () => {};
-  const appleLoginHandler = () => {};
 
   return (
     <main className={styles.wrapper}>
       <section className={styles.body}>
-        <div className={styles.bodyInner}>
-          <div>
-            <h3 className={styles.title}>
-              Manage employees easily starting from now!
-            </h3>
-            <p className={styles.text}>Get started for free today!</p>
-          </div>
+        <Image
+          src="/assets/logo.svg"
+          alt="logo"
+          width={158}
+          height={24}
+          className={styles.logo}
+        />
 
-          <form className={styles.form} onSubmit={signupHandler}>
-            <Input
-              label="Name"
-              placeholder="Input your full name"
-              value={name}
-              setValue={setName}
-              type="text"
-            />
-
-            <Input
-              label="Work Email"
-              placeholder="example@company.com"
-              value={workEmail}
-              setValue={setWorkEmail}
-              type="email"
-            />
-
-            <Input
-              label="Password"
-              placeholder="Input your password account"
-              value={password}
-              setValue={setPassword}
-              type="password"
-            />
-
-            <div className={styles.formBottom}>
-              <Button onClick={signupHandler} isDisabled={isDisabled}>
-                Create Account
-              </Button>
-
-              <p className={styles.loginDivider}>Or login with</p>
-
-              <div className={styles.socialButtonWrapper}>
-                <SocialButton
-                  socialIcon="/assets/google.svg"
-                  onClick={googleLoginHandler}
-                >
-                  Google
-                </SocialButton>
-                <SocialButton
-                  socialIcon="/assets/apple.svg"
-                  onClick={appleLoginHandler}
-                >
-                  Apple
-                </SocialButton>
-              </div>
-
-              <p className={styles.authChange}>
-                Already have an account?{" "}
-                <Link href="/login" className={styles.authChangeLink}>
-                  Login Here
-                </Link>
-              </p>
-            </div>
-          </form>
+        <div className={styles.titleWrapper}>
+          <h3 className={styles.title}>
+            Manage employees easily starting from now!
+          </h3>
+          <p className={styles.titleWrapperText}>Get started for free today!</p>
         </div>
 
-        <footer className={styles.footer}>
-          <p className={styles.copyRight}>
-            © 2023 Humanline . Alrights reserved.
-          </p>
-          <p className={styles.terms}>Terms & Conditions</p>
-          <p className={styles.policy}>Privacy Policy</p>
-        </footer>
+        <form className={styles.form} onSubmit={signupHandler}>
+          <Input
+            label="Name"
+            placeholder="Input your full name"
+            value={name}
+            setValue={setName}
+            type="text"
+            errors={nameErrors}
+          />
+
+          <Input
+            label="Work Email"
+            placeholder="example@company.com"
+            value={workEmail}
+            setValue={setWorkEmail}
+            type="email"
+            errors={workEmailErrors}
+          />
+
+          <Input
+            label="Password"
+            placeholder="Input your password account"
+            value={password}
+            setValue={setPassword}
+            type="password"
+            errors={passwordErrors}
+          />
+        </form>
+
+        <div className={styles.callToAction}>
+          <Button onClick={signupHandler} isDisabled={isDisabled}>
+            Create Account
+          </Button>
+          <AuthDivider text="Or sign up with" />
+          <SocialLogin />
+        </div>
+
+        <AuthChange
+          href="/login"
+          text="Already have an account?"
+          action="Login Here"
+        />
+
+        <Footer />
       </section>
 
-      <section className={styles.subContent}>
+      <section className={styles.heroWrapper}>
         <div className={styles.starWrapper}>
           <Image
             width={509}
@@ -123,11 +157,11 @@ export default function CreateCompany() {
           </p>
         </div>
 
-        <div className={styles.heroWrapper}>
+        <div className={styles.heroImageWrapper}>
           <Image
             width={620}
             height={768}
-            className={styles.hero}
+            className={styles.heroImage}
             src="/assets/signup-dark.png"
             alt="onboarding imagge"
           />

@@ -5,3 +5,7 @@ export { default as Checkbox } from "./Checkbox/Checkbox";
 export { default as Success } from "./Success/Success";
 export { default as LineBackground } from "./LineBackground/LineBackground";
 export { default as RenderAppropriateComponent } from "./RenderAppropriateComponent/RenderAppropriateComponent";
+export { default as Footer } from "./Footer/Footer";
+export { default as SocialLogin } from "./SocialLogin/SocialLogin";
+export { default as AuthDivider } from "./AuthDivider/AuthDivider";
+export { default as AuthChange } from "./AuthChange/AuthChange";
