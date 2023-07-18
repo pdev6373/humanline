@@ -31,7 +31,7 @@ export default function ForgotPassword() {
   useEffect(() => {
     setIsDisabled(!email.length);
     validateForm();
-  }, [email]);
+  }, [email, validateForm]);
 
   return (
     <LineBackground>

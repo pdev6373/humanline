@@ -66,7 +66,13 @@ export default function CreateCompany() {
       )
     );
     validateForm();
-  }, [name, workEmail, password]);
+  }, [
+    name,
+    workEmail,
+    password,
+    validateName.metRequirement,
+    validateEmail.metRequirement,
+  ]);
 
   const signupHandler = (e: any) => {
     e.preventDefault();
