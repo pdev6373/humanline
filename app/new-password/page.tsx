@@ -63,12 +63,7 @@ export default function NewPassword() {
       !(validatePassword.metRequirement && !!confirmPassword.length)
     );
     validateForm();
-  }, [
-    password,
-    validatePassword.metRequirement,
-    validateForm,
-    confirmPassword.length,
-  ]);
+  }, [password, confirmPassword]);
 
   const nextHandler = () => router.push("/otp-verification");
 

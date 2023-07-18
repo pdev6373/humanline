@@ -52,7 +52,7 @@ export default function Login() {
   useEffect(() => {
     setIsDisabled(!(validateEmail.metRequirement && !!password.length));
     validateForm();
-  }, [email, password, validateEmail.metRequirement]);
+  }, [email, password]);
 
   const loginHandler = async (e: any) => {
     e.preventDefault();
