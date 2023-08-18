@@ -1,0 +1,180 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.topNav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.topNavText {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+}
+
+.sectionWrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.aside {
+  background: #1f2937;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  flex: 1;
+  max-width: 300px;
+}
+
+.asideNameWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.asideName {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.asidePosition {
+  color: #687588;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.asideStatusWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.asideStatus {
+  background: #e7f7ef;
+  border-radius: 8px;
+  padding: 4px 33.5px;
+  color: #0caf60;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+}
+
+.statusIcon {
+  filter: invert(68%) sepia(21%) saturate(233%) hue-rotate(174deg)
+    brightness(98%) contrast(88%);
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  background: #323b49;
+}
+
+.asideContactsAndDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.asideContact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.asideContactText {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.asideDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.asideDetailsTitleWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.asideDetailsTitle {
+  color: #687588;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+.asideDetailsValueWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.asideDetailsValue {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.asideAction {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.asideActionText {
+  color: #111827;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+  text-align: center;
+}
+
+.actionIcon {
+  filter: invert(7%) sepia(28%) saturate(1203%) hue-rotate(183deg)
+    brightness(91%) contrast(95%);
+}
+
+.main {
+  flex: 1;
+  background: #1f2937;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contactIcon {
+  filter: invert(76%) sepia(31%) saturate(168%) hue-rotate(174deg)
+    brightness(87%) contrast(86%);
+}

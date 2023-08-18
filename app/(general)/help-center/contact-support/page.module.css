@@ -1,0 +1,48 @@
+.wrapper {
+  background: #1f2937;
+  padding: 32px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  border: 1px solid #323b49;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.header {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+}
+
+.body {
+  color: #687588;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.mail {
+  color: #27a376;
+}

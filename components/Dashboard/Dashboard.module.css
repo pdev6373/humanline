@@ -1,0 +1,162 @@
+.wrapper {
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.skeleton {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: #1f2937;
+  animation: skeleton 2s forwards;
+}
+
+@keyframes skeleton {
+  from {
+    display: block;
+  }
+  to {
+    display: none;
+  }
+}
+
+.skeleton::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background: #2a3441;
+  border-radius: 100px;
+}
+
+.headingWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.name {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+}
+
+.subHeading {
+  color: #687588;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.performance {
+  background: #1f2937;
+  border-radius: 10px;
+  display: flex;
+}
+
+.numberStats {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* width: 45%; */
+}
+
+.statsIconWrapper {
+  background: #323b49;
+  padding: 16px;
+  max-width: 52px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.statsIcon {
+  filter: invert(100%) sepia(64%) saturate(0%) hue-rotate(32deg)
+    brightness(114%) contrast(100%);
+}
+
+.upTrend {
+  filter: invert(44%) sepia(75%) saturate(420%) hue-rotate(107deg)
+    brightness(104%) contrast(84%);
+}
+
+.numberStat {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.borderBottom,
+.borderRightBottom {
+  border-bottom: 1px solid #323b49;
+}
+
+.borderRight,
+.borderRightBottom {
+  border-right: 1px solid #323b49;
+}
+
+.growth,
+.growthPercent {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.growthPercent {
+  gap: 4px;
+  background: #e7f7ef;
+  border-radius: 10px;
+  padding: 4px 10px;
+}
+
+.growthReduce {
+  background: #ffedec;
+}
+
+.growthNumber {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+.trendText {
+  color: #27a376;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0.2px;
+}
+
+.trendDownText {
+  color: #e03137;
+}
+
+.statName {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.graph {
+  padding: 24px;
+}
+
+.graphTitle {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25px;
+}
+
+.statNameWrapper {
+  position: relative;
+  overflow: hidden;
+}

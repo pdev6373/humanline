@@ -1,0 +1,36 @@
+.infoNavList {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.infoNavList::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #323b49;
+}
+
+.infoNavLink {
+  display: block;
+  min-width: 100px;
+  padding: 9px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.infoNavLinkActive {
+  color: #27a376;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  border-bottom: 2px solid #27a376;
+}

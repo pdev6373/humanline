@@ -1,0 +1,12 @@
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+}
