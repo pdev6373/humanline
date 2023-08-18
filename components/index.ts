@@ -21,3 +21,5 @@ export { default as EmployeeHeader } from "./EmployeeHeader/EmployeeHeader";
 export { default as EmployeeDetailsList } from "./EmployeeDetailsList/EmployeeDetailsList";
 export { default as EmployeeDetailsTable } from "./EmployeeDetailsTable/EmployeeDetailsTable";
 export { default as HelpCenterHeader } from "./HelpCenterHeader/HelpCenterHeader";
+export { default as SectionHeader } from "./SectionHeader/SectionHeader";
+export { default as SettingsAside } from "./SettingsAside/SettingsAside";

@@ -1,6 +1,6 @@
 import { HelpCenterListType } from "@/types";
 
-export const HelpCenterList: HelpCenterListType[] = [
+const HelpCenterList: HelpCenterListType[] = [
   //   {
   //     icon: "/assets/users.svg",
   //     title: "Get Started",

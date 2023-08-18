@@ -41,7 +41,7 @@ export default function EmployeeLayout({
               />
             </div>
 
-            <div className={styles.line}></div>
+            <div className="line"></div>
 
             <div className={styles.asideContactsAndDetails}>
               {Employee.contact.map((contact) => (
@@ -58,7 +58,7 @@ export default function EmployeeLayout({
               ))}
             </div>
 
-            <div className={styles.line}></div>
+            <div className="line"></div>
 
             <div className={styles.asideContactsAndDetails}>
               {Employee.details.map((details) => (

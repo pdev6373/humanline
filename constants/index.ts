@@ -6,3 +6,8 @@ export { default as Employee } from "./Employee";
 export { default as HelpCenterList } from "./HelpCenterList";
 export { default as FAQs } from "./FAQs";
 export { default as PrivacyPolicies } from "./PrivacyPolicies";
+export { default as KeyboardShortcuts } from "./KeyboardShortcuts";
+export { default as SettingsNav } from "./SettingsNav";
+export { default as SettingsConstant } from "./SettingsConstant";
+export { default as CompanyInfo } from "./CompanyInfo";
+export { default as AllEmloyees } from "./AllEmloyees";

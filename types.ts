@@ -79,21 +79,7 @@ export type LogoType = {
 
 export type NavType = {
   name: string;
-  route:
-    | "/"
-    | "/employees"
-    | "/checklist"
-    | "/time-off"
-    | "/attendance"
-    | "/payroll"
-    | "/performance"
-    | "/recruitment"
-    | "/help-center"
-    | "/settings"
-    | "/documents"
-    | "/news"
-    | "/report"
-    | "/playslip";
+  route: string;
   icon?: string;
 };
 
@@ -188,7 +174,57 @@ export type FAQType = {
   likes: number;
 };
 
-export type PrivacyPolicyType = {
+export interface PrivacyPolicyType {
   title: string;
   body: string;
-};
+}
+
+export interface ShortcutsOtherInfoType extends PrivacyPolicyType {}
+export interface SectionHeaderType extends PrivacyPolicyType {}
+
+export interface ShortcutBodyType {
+  shortcut: string;
+  description: string;
+}
+
+export interface ShortcutType {
+  header: string;
+  body: ShortcutBodyType[];
+}
+
+export interface ShortcutsType {
+  shortcuts: ShortcutType[];
+  otherInfo: ShortcutsOtherInfoType[];
+}
+
+export interface CompanyInfoBodyType {
+  name: string;
+  value:
+    | string
+    | {
+        countryCode: string;
+        number: string;
+      };
+  isRequired: boolean;
+}
+
+export interface CompanyInfoType {
+  title: string;
+  body: CompanyInfoBodyType[];
+}
+
+export interface SettingsConstantType {
+  companyInfo: CompanyInfoType;
+}
+
+export interface EmployeesContactType {
+  type: "mail" | "phone";
+  contact: string;
+}
+
+export interface AllEmployeesType {
+  profilePics: string;
+  fullName: string;
+  role: string;
+  contacts: EmployeesContactType[];
+}

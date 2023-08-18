@@ -80,12 +80,6 @@
     brightness(98%) contrast(88%);
 }
 
-.line {
-  height: 1px;
-  width: 100%;
-  background: #323b49;
-}
-
 .asideContactsAndDetails {
   display: flex;
   flex-direction: column;

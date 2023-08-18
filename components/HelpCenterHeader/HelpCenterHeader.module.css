@@ -10,3 +10,8 @@
   font-weight: 600;
   line-height: 27px;
 }
+
+.icon {
+  filter: invert(98%) sepia(2%) saturate(255%) hue-rotate(195deg)
+    brightness(115%) contrast(100%);
+}

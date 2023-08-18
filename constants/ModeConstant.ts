@@ -1,6 +1,6 @@
 import { ModeType } from "@/types";
 
-export const Modes: ModeType = {
+const Modes: ModeType = {
   light: {
     type: "light",
     image: "/assets/sun.svg",

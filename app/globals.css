@@ -133,6 +133,12 @@ table {
   border-collapse: collapse;
 }
 
+.line {
+  height: 1px;
+  width: 100%;
+  background: #323b49;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

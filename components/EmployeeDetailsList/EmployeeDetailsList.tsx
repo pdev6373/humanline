@@ -10,7 +10,7 @@ export default function EmployeeDetailsList({ info }: EmployeeDetailsListType) {
         <Image src="/assets/edit.svg" alt="edit icon" width={24} height={24} />
       </div>
 
-      <div className={styles.line}></div>
+      <div className="line"></div>
 
       <div
         className={[
