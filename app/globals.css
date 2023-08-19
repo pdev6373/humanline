@@ -1,15 +1,15 @@
 :root {
   /*  BACKGROUNDS */
-  --bg-main: rgba(255, 255, 255, 1);
-  --bg-main-300: rgba(255, 255, 255, 1);
-  --bg-main-200: rgba(241, 242, 244, 1);
-  --bg-secondary: rgba(17, 24, 39, 1);
+  --bg-main: rgba(17, 24, 39, 1);
+  --bg-main-300: rgba(50, 59, 73, 1);
+  --bg-main-200: rgba(31, 41, 55, 1);
+  --bg-secondary: rgba(255, 255, 255, 1);
 
   /* COLORS */
-  --clr-main: rgba(17, 24, 39, 1);
-  --clr-secondary: rgba(160, 174, 192, 1);
-  --clr-input: rgba(160, 174, 192, 1);
-  --clr-button: rgba(255, 255, 255, 1);
+  --clr-main: rbga(255, 255, 255, 1);
+  --clr-secondary: rgba(50, 59, 73, 1);
+  --clr-input: rgba(104, 117, 136, 1);
+  --clr-button: rgba(50, 59, 73, 1);
   --clr-alert: rgba(224, 49, 55, 1);
   --clr-success: rgba(39, 163, 118, 1);
 
@@ -32,9 +32,9 @@
   --lh-200: 1.6; /* 19.2px */
 
   /* BORDER */
-  --bdr: 1px solid rgba(233, 234, 236, 1);
-  --bdr-social: 1px solid rgba(233, 234, 236, 1);
-  --bdr-secondary: 1px solid rgba(12, 175, 96, 1);
+  --bdr: 1px solid rgba(104, 117, 136, 1);
+  --bdr-social: 1px solid var(--bg-main-300);
+  --bdr-secondary: 1px solid rgba(39, 163, 118, 1);
   --bdr-alert: 1px solid var(--clr-alert);
 
   /* BORDER RADIUS */
@@ -45,33 +45,6 @@
   --sp: 1em;
   --sp-500: 1.2em;
   --sp-600: 1.4em;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    /*  BACKGROUNDS */
-    --bg-main: rgba(17, 24, 39, 1);
-    --bg-main-300: rgba(50, 59, 73, 1);
-    --bg-main-200: rgba(31, 41, 55, 1);
-    --bg-secondary: rgba(255, 255, 255, 1);
-
-    /* COLORS */
-    --clr-main: rbga(255, 255, 255, 1);
-    --clr-secondary: rgba(50, 59, 73, 1);
-    --clr-input: rgba(104, 117, 136, 1);
-    --clr-button: rgba(50, 59, 73, 1);
-
-    /* BORDER */
-    --bdr: 1px solid rgba(104, 117, 136, 1);
-    --bdr-social: 1px solid var(--bg-main-300);
-    --bdr-secondary: 1px solid rgba(39, 163, 118, 1);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }
 
 *,

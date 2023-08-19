@@ -1,3 +1,53 @@
 .wrapper {
-  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.background,
+.border {
+  border-radius: 16px;
+}
+
+.background {
+  background: #1f2937;
+}
+
+.border {
+  border: 1px solid #323b49;
+}
+
+.padding16 {
+  padding: 16px;
+}
+
+.padding24 {
+  padding: 24px;
+}
+
+.padding32 {
+  padding: 32px;
+}
+
+.paddingBlock16 {
+  padding-block: 16px;
+}
+
+.paddingBlock24 {
+  padding-block: 24px;
+}
+
+.paddingBlock32 {
+  padding-block: 32px;
+}
+
+.gap16 {
+  gap: 16px;
+}
+
+.gap24 {
+  gap: 24px;
+}
+
+.gap32 {
+  gap: 32px;
 }

@@ -85,6 +85,7 @@ export default function EmployeeLayout({
                     alt="back"
                     width={16}
                     height={16}
+                    className={styles.rightIcon}
                   />
                 </div>
               ))}

@@ -1,21 +1,3 @@
-.wrapper {
-  background: #1f2937;
-  padding: 32px;
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.shortcuts {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #323b49;
-  border-radius: 16px;
-  padding: 24px;
-  gap: 32px;
-}
-
 .headerWrapper {
   display: flex;
   flex-direction: column;

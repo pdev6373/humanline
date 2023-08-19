@@ -1,5 +1,19 @@
 import { HTMLInputTypeAttribute } from "react";
 
+type WrapperSpaceType = 0 | 16 | 24 | 32;
+
+export type WrapperType = {
+  children: JSX.Element;
+  gap: WrapperSpaceType;
+  padding?: WrapperSpaceType;
+  hasBorder?: boolean;
+  hasBackground?: boolean;
+  paddingBlock?: WrapperSpaceType;
+  header?: string;
+};
+
+//
+
 interface PlainButtonType {
   children: any;
   onClick: any;
@@ -102,10 +116,6 @@ export type NumberStatsType = {
   isTendingUp: boolean;
 };
 
-export type WrapperType = {
-  children: JSX.Element;
-};
-
 export type EmployeeContactType = {
   icon: string;
   value: string;
@@ -180,7 +190,11 @@ export interface PrivacyPolicyType {
 }
 
 export interface ShortcutsOtherInfoType extends PrivacyPolicyType {}
-export interface SectionHeaderType extends PrivacyPolicyType {}
+
+export interface SectionHeaderType extends PrivacyPolicyType {
+  homeRoute: string;
+  currentRouteText: string;
+}
 
 export interface ShortcutBodyType {
   shortcut: string;

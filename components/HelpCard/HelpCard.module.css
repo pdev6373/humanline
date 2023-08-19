@@ -1,0 +1,27 @@
+.iconWrapper {
+  width: 52px;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  border: 2px solid #323b49;
+}
+
+.icon {
+  filter: invert(52%) sepia(37%) saturate(681%) hue-rotate(107deg)
+    brightness(93%) contrast(99%);
+}
+
+.title {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.body {
+  color: #687588;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+}

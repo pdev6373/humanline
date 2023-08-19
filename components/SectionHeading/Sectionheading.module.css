@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.header {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+}
+
+.textWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.text {
+  color: #687588;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.routeText {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.icon {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(99deg)
+    brightness(109%) contrast(100%);
+}

@@ -44,7 +44,7 @@ const HelpCenterList: HelpCenterListType[] = [
   },
 
   {
-    icon: "/assets/star.svg",
+    icon: "/assets/lock.svg",
     title: "Privacy Policy",
     body: "Our privacy policy",
     route: "/help-center/privacy-policy",

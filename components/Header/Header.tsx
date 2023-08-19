@@ -1,13 +1,13 @@
 import { HeaderNavs } from "@/constants";
-import { HeaderSearch } from "..";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Header.module.css";
+import Search from "../Search/Search";
 
 export default function Header() {
   return (
     <header className={styles.wrapper}>
-      <HeaderSearch />
+      <Search placeholder="Search anything…" type="header" />
 
       <ul className={styles.navs}>
         {HeaderNavs.map((nav) => (

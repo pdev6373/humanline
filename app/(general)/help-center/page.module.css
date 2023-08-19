@@ -3,38 +3,3 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
 }
-
-.helpWrapper {
-  background: #1f2937;
-  border-radius: 16px;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: flex-start;
-}
-
-.title {
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 28px;
-}
-
-.body {
-  color: #687588;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 22px;
-}
-
-.iconWrapper {
-  padding: 16px;
-  border-radius: 50%;
-  border: 2px solid #323b49;
-}
-
-.icon {
-  filter: invert(52%) sepia(37%) saturate(681%) hue-rotate(107deg)
-    brightness(93%) contrast(99%);
-}

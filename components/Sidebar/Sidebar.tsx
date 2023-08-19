@@ -60,37 +60,37 @@ export default function Sidebar() {
         </div>
 
         <div className={styles.bottomNav}>
-          <div className={styles.bottomNavInner}>
-            <li>
-              <Link href="/help-center" className={styles.navLink}>
-                <Image
-                  src="/assets/question.svg"
-                  alt="nav icon"
-                  width={20}
-                  height={20}
-                  className={styles.bottomIcon}
-                />
-                <p className={styles.navName}>Help Center</p>
+          {/* <div className={styles.bottomNavInner}> */}
+          <li>
+            <Link href="/help-center" className={styles.navLink}>
+              <Image
+                src="/assets/question.svg"
+                alt="nav icon"
+                width={20}
+                height={20}
+                className={styles.bottomIcon}
+              />
+              <p className={styles.navName}>Help Center</p>
 
-                <div className={styles.helpTextWrapper}>
+              {/* <div className={styles.helpTextWrapper}>
                   <p className={styles.helpText}>8</p>
-                </div>
-              </Link>
-            </li>
+                </div> */}
+            </Link>
+          </li>
 
-            <li>
-              <Link href="/settings" className={styles.navLink}>
-                <Image
-                  src="/assets/settings.svg"
-                  alt="nav icon"
-                  width={20}
-                  height={20}
-                  className={styles.bottomIcon}
-                />
-                <p className={styles.navName}>Settings</p>
-              </Link>
-            </li>
-          </div>
+          <li>
+            <Link href="/settings" className={styles.navLink}>
+              <Image
+                src="/assets/settings.svg"
+                alt="nav icon"
+                width={20}
+                height={20}
+                className={styles.bottomIcon}
+              />
+              <p className={styles.navName}>Settings</p>
+            </Link>
+          </li>
+          {/* </div> */}
         </div>
       </ul>
 
