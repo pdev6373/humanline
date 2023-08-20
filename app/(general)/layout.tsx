@@ -34,7 +34,7 @@ export default function RootLayout({ children }: LayoutType) {
 
   useEffect(() => {
     setPageHeader(pageHeaderHandler());
-  }, [pathname]);
+  }, [pathname, pageHeaderHandler]);
 
   function pageHeaderHandler(): PageHeaderType {
     const currentNav = NavConstant.find((nav) => pathname === nav.route);

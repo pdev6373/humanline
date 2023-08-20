@@ -13,7 +13,7 @@ import styles from "./Table.module.css";
 
 export default function Table<Type>({ data, tableColumns }: TableType<Type>) {
   const [sorting, setSorting] = useState<SortingState>([]);
-  const columns = useMemo(() => tableColumns, []);
+  const columns = useMemo(() => tableColumns, [tableColumns]);
   const table = useReactTable({
     data,
     columns,
