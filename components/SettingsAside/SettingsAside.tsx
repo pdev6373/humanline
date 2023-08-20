@@ -12,6 +12,7 @@ export default function SettingsAside() {
     <aside className={styles.aside}>
       {SettingsNav.map((settings) => (
         <Link
+          key={settings.name}
           href={settings.route}
           className={[
             styles.asideLink,

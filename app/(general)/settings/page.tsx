@@ -14,6 +14,7 @@ export default function page() {
       <form className={styles.form}>
         {companyInfo.body.map((info) => (
           <div
+            key={info.name}
             className={[
               styles.formInput,
               info.name.toLowerCase() == "company overview" &&

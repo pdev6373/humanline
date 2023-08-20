@@ -1,22 +1,13 @@
+import { HelpCardType } from "@/types";
 import { Wrapper } from "..";
 import Link from "next/link";
-import styles from "./HelpCard.module.css";
 import Image from "next/image";
+import styles from "./HelpCard.module.css";
 
-export default function HelpCard({
-  route,
-  icon,
-  title,
-  body,
-}: {
-  route: string;
-  icon: string;
-  title: string;
-  body: string;
-}) {
+export default function HelpCard({ icon, title, body, route }: HelpCardType) {
   return (
     <Link href={route}>
-      <Wrapper hasBackground gap={16} padding={24}>
+      <Wrapper hasBackground padding={24} gap={16}>
         <>
           <div className={styles.iconWrapper}>
             <Image

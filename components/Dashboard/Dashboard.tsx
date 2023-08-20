@@ -44,6 +44,7 @@ export default function Dashboard() {
         <div className={styles.numberStats}>
           {NumberStats.map((stats, index) => (
             <div
+              key={index}
               className={`${styles.numberStat} ${
                 !index
                   ? styles.borderRightBottom

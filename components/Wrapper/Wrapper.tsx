@@ -1,15 +1,15 @@
 import { WrapperType } from "@/types";
-import styles from "./Wrapper.module.css";
 import { WrapperHeading } from "..";
+import styles from "./Wrapper.module.css";
 
 export default function Wrapper({
   children,
-  paddingBlock,
   header,
-  gap = 0,
-  padding = 0,
-  hasBorder = false,
   hasBackground = false,
+  hasBorder = false,
+  padding = 0,
+  paddingBlock = 0,
+  gap = 0,
 }: WrapperType) {
   return (
     <div

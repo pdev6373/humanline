@@ -1,3 +1,4 @@
+import { ColumnDef } from "@tanstack/react-table";
 import { ReactNode, HTMLInputTypeAttribute } from "react";
 
 export type LayoutType = {
@@ -5,15 +6,44 @@ export type LayoutType = {
 };
 
 type WrapperSpaceType = 0 | 16 | 24 | 32;
-
 export type WrapperType = {
   children: JSX.Element;
-  gap?: WrapperSpaceType;
-  padding?: WrapperSpaceType;
-  hasBorder?: boolean;
   hasBackground?: boolean;
+  hasBorder?: boolean;
+  padding?: WrapperSpaceType;
   paddingBlock?: WrapperSpaceType;
+  gap?: WrapperSpaceType;
   header?: string;
+};
+
+export type HelpCardType = {
+  icon: string;
+  title: string;
+  body: string;
+  route: string;
+};
+
+export type HelpBodyTextType = {
+  title: string;
+  body: JSX.Element | string;
+};
+
+export type FAQType = {
+  question: string;
+  answer: string;
+  time: string;
+  likes: number;
+};
+
+export type ShortcutType = {
+  windows: string;
+  mac_os: string;
+  title: string;
+};
+
+export type TableType<Type> = {
+  data: Type[];
+  tableColumns: ColumnDef<Type>[];
 };
 
 //
@@ -189,13 +219,6 @@ export type HelpCenterListType = {
   route: string;
 };
 
-export type FAQType = {
-  question: string;
-  answer: string;
-  time: string;
-  likes: number;
-};
-
 export interface PrivacyPolicyType {
   title: string;
   body: string;
@@ -208,12 +231,6 @@ export interface SectionHeaderType {
   currentRouteName: string;
   description: string;
   homeRoute: string;
-}
-
-export interface ShortcutType {
-  windows: string;
-  mac_os: string;
-  title: string;
 }
 
 export interface ShortcutsType {

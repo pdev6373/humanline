@@ -1,17 +1,15 @@
 import { AllEmloyees } from "@/constants";
 import Image from "next/image";
 import styles from "./page.module.css";
-import { SectionHeader, Wrapper } from "@/components";
+import { Wrapper } from "@/components";
 
 export default function page() {
   return (
     <Wrapper>
       <div className={styles.wrapper}>
-        <SectionHeader title="Directory" body="This is director board" />
-
         <div className={styles.employees}>
-          {AllEmloyees.map((employee) => (
-            <div className={styles.employee}>
+          {AllEmloyees.map((employee, index) => (
+            <div className={styles.employee} key={index}>
               <Image
                 src={employee.profilePics}
                 alt="employee image"
@@ -27,8 +25,8 @@ export default function page() {
               <div className="line"></div>
 
               <div className={styles.contacts}>
-                {employee.contacts.map((contact) => (
-                  <div className={styles.contact}>
+                {employee.contacts.map((contact, index) => (
+                  <div className={styles.contact} key={index}>
                     <Image
                       src={
                         contact.type === "mail"

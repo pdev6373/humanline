@@ -1,4 +1,5 @@
-import { HelpBodyText, Wrapper } from "@/components";
+import { Fragment } from "react";
+import { Wrapper, HelpBodyText } from "@/components";
 import { PrivacyPolicies } from "@/constants";
 
 export default function page() {
@@ -7,10 +8,12 @@ export default function page() {
       <Wrapper hasBorder padding={24} gap={32}>
         <>
           {PrivacyPolicies.map((privacyPolicy) => (
-            <HelpBodyText
-              title={privacyPolicy.title}
-              body={privacyPolicy.body}
-            />
+            <Fragment key={privacyPolicy.title}>
+              <HelpBodyText
+                title={privacyPolicy.title}
+                body={privacyPolicy.body}
+              />
+            </Fragment>
           ))}
         </>
       </Wrapper>

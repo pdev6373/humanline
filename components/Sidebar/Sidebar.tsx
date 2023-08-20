@@ -36,6 +36,7 @@ export default function Sidebar() {
         <div className={styles.navWrapper}>
           {NavConstant.map((nav) => (
             <li
+              key={nav.name}
               className={nav.route === "/help-center" ? styles.navBottom : ""}
             >
               <Link href={nav.route} className={styles.navLink}>

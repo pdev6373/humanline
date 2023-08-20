@@ -1,4 +1,4 @@
-import { HelpBodyText, Wrapper } from "@/components";
+import { Wrapper, HelpBodyText } from "@/components";
 import styles from "./page.module.css";
 
 export default function page() {
@@ -9,15 +9,15 @@ export default function page() {
       gap={32}
       header="Customer Contact Support"
     >
-      <>
-        <h2 className={styles.header}>
-          If you have any trouble getting started or during usage, please reach
-          out to us using the following support channels.
-        </h2>
+      <Wrapper hasBorder padding={24} gap={32}>
+        <>
+          <h2 className={styles.header}>
+            If you have any trouble getting started or during usage, please
+            reach out to us using the following support channels.
+          </h2>
 
-        <Wrapper gap={24}>
-          <>
-            <Wrapper hasBorder padding={24}>
+          <Wrapper gap={32}>
+            <>
               <HelpBodyText
                 title="Intercom Live Chat System"
                 body="Please describe your problems in the Live Chat, our chat
@@ -25,9 +25,7 @@ export default function page() {
                     18:00 (GMT +7), Monday to Friday. You are welcome to leave
                     us messages if our specialists are not online."
               />
-            </Wrapper>
 
-            <Wrapper hasBorder padding={24}>
               <HelpBodyText
                 title="Submit a Ticket"
                 body={
@@ -41,10 +39,10 @@ export default function page() {
                   </>
                 }
               />
-            </Wrapper>
-          </>
-        </Wrapper>
-      </>
+            </>
+          </Wrapper>
+        </>
+      </Wrapper>
     </Wrapper>
   );
 }

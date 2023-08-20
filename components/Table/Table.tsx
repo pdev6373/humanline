@@ -1,34 +1,29 @@
 "use client";
-import { useMemo, useState } from "react";
-import Image from "next/image";
-import styles from "./Table.module.css";
+import { useState, useMemo } from "react";
+import { TableType } from "@/types";
 import {
   useReactTable,
-  ColumnDef,
-  flexRender,
   SortingState,
   getCoreRowModel,
   getSortedRowModel,
+  flexRender,
 } from "@tanstack/react-table";
-import { ShortcutType } from "@/types";
+import Image from "next/image";
+import styles from "./Table.module.css";
 
-export default function Table({ data, tableColumns }: any) {
+export default function Table<Type>({ data, tableColumns }: TableType<Type>) {
   const [sorting, setSorting] = useState<SortingState>([]);
-
-  //   const columns = useMemo<ColumnDef<ShortcutType>[]>(() => tableColumns, []);
-  const columns = useMemo<any>(() => tableColumns, []);
-
-  const tableProps = {
+  const columns = useMemo(() => tableColumns, []);
+  const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
+    onSortingChange: setSorting,
     state: {
       sorting,
     },
-    onSortingChange: setSorting,
-  };
-  const table = useReactTable(tableProps);
+  });
 
   return (
     <table className={styles.table}>

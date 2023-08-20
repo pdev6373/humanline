@@ -1,18 +1,9 @@
-import { HelpBodyText, Wrapper } from "..";
+import { FAQType } from "@/types";
+import { Wrapper, HelpBodyText } from "..";
 import Image from "next/image";
 import styles from "./FAQ.module.css";
 
-export default function FAQ({
-  question,
-  answer,
-  time,
-  likes,
-}: {
-  question: string;
-  answer: string;
-  time: string;
-  likes: number;
-}) {
+export default function FAQ({ question, answer, time, likes }: FAQType) {
   return (
     <Wrapper hasBorder padding={24} gap={32}>
       <>

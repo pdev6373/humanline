@@ -22,7 +22,6 @@
   transition: padding-left 0.15s ease-in;
 }
 
-.asideLink:hover,
 .asideLinkCurrent {
   background: #323b49;
   padding-left: 16px;

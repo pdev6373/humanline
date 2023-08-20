@@ -2,12 +2,9 @@ import { EmployeeHeader, Wrapper } from "@/components";
 import Image from "next/image";
 import styles from "./layout.module.css";
 import { Employee } from "@/constants";
+import { LayoutType } from "@/types";
 
-export default function EmployeeLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function EmployeeLayout({ children }: LayoutType) {
   return (
     <Wrapper>
       <Wrapper gap={32}>
@@ -47,8 +44,8 @@ export default function EmployeeLayout({
               <div className="line"></div>
 
               <div className={styles.asideContactsAndDetails}>
-                {Employee.contact.map((contact) => (
-                  <div className={styles.asideContact}>
+                {Employee.contact.map((contact, index) => (
+                  <div className={styles.asideContact} key={index}>
                     <Image
                       src={contact.icon}
                       alt="contact icon"
@@ -64,8 +61,8 @@ export default function EmployeeLayout({
               <div className="line"></div>
 
               <div className={styles.asideContactsAndDetails}>
-                {Employee.details.map((details) => (
-                  <div className={styles.asideDetails}>
+                {Employee.details.map((details, index) => (
+                  <div className={styles.asideDetails} key={index}>
                     <div className={styles.asideDetailsTitleWrapper}>
                       <p className={styles.asideDetailsTitle}>
                         {details.title}

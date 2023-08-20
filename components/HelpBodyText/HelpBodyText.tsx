@@ -1,13 +1,8 @@
-import Wrapper from "../Wrapper/Wrapper";
+import { HelpBodyTextType } from "@/types";
+import { Wrapper } from "..";
 import styles from "./HelpBodyText.module.css";
 
-export default function HelpBodyText({
-  title,
-  body,
-}: {
-  title: string;
-  body: JSX.Element | string;
-}) {
+export default function HelpBodyText({ title, body }: HelpBodyTextType) {
   return (
     <Wrapper gap={16}>
       <>

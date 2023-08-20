@@ -18,8 +18,8 @@ export default function EmployeeHeader({ nav }: EmployeeHeaderNavType) {
   return (
     <header>
       <ul className={styles.infoNavList}>
-        {nav.map((nav) => (
-          <li>
+        {nav.map((nav, index) => (
+          <li key={index}>
             <Link
               href={`/employees/employee/${nav.route}`}
               className={`${styles.infoNavLink} ${

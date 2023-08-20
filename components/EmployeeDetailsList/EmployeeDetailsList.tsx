@@ -21,8 +21,8 @@ export default function EmployeeDetailsList({ info }: EmployeeDetailsListType) {
             styles.contentWrapperColumn,
         ].join(" ")}
       >
-        {info.content.map((content) => (
-          <div className={styles.content}>
+        {info.content.map((content, index) => (
+          <div className={styles.content} key={index}>
             <p
               className={[
                 styles.contentTitle,

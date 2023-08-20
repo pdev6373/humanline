@@ -51,8 +51,8 @@ export default function Input({
 
       <div className={styles.errors}>
         {displayMetRequirements
-          ? requirements.map((requirement) => (
-              <div className={styles.errorDisplayWrapper} key={requirement}>
+          ? requirements.map((requirement, index) => (
+              <div className={styles.errorDisplayWrapper} key={index}>
                 {errors.includes(requirement) ? (
                   <>
                     <Image
@@ -77,8 +77,8 @@ export default function Input({
               </div>
             ))
           : showErrorHandler() &&
-            errors.map((error) => (
-              <div className={styles.errorWrapper} key={error}>
+            errors.map((error, index) => (
+              <div className={styles.errorWrapper} key={index}>
                 <Image
                   src="/assets/alert-circle.svg"
                   alt="alert"

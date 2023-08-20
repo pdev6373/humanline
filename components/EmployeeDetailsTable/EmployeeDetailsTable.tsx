@@ -23,8 +23,10 @@ export default function EmployeeDetailsTable({
         <table className={styles.table}>
           <thead className={styles.tableHead}>
             <tr>
-              {info.content.map((content) => (
-                <th className={styles.tableHeadText}>{content.title}</th>
+              {info.content.map((content, index) => (
+                <th className={styles.tableHeadText} key={index}>
+                  {content.title}
+                </th>
               ))}
             </tr>
           </thead>
@@ -32,9 +34,9 @@ export default function EmployeeDetailsTable({
           <tbody>
             <tr>
               {info.content.map(
-                (content) =>
+                (content, index) =>
                   typeof content.value === "string" && (
-                    <td className={styles.tableHeadText}>
+                    <td className={styles.tableHeadText} key={index}>
                       {content.value.length ? content.value : "-"}
                     </td>
                   )

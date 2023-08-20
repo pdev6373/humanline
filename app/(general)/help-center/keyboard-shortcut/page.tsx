@@ -1,8 +1,9 @@
-import { HelpBodyText, Table, Wrapper } from "@/components";
+import { Fragment } from "react";
+import { ShortcutType } from "@/types";
+import { Wrapper, HelpBodyText, Table } from "@/components";
 import { KeyboardShortcuts } from "@/constants";
 
 const data = KeyboardShortcuts.shortcuts;
-
 const columns = [
   {
     header: "Shortcuts Key on Windows",
@@ -35,12 +36,14 @@ export default function page() {
                 that you can use on Grove HR to save your time.`}
           />
 
-          <Table tableColumns={columns} data={data} />
+          <Table<ShortcutType> data={data} tableColumns={columns} />
 
           <Wrapper gap={32}>
             <>
               {KeyboardShortcuts.otherInfo.map((info) => (
-                <HelpBodyText title={info.title} body={info.body} />
+                <Fragment key={info.title}>
+                  <HelpBodyText title={`${info.title} :`} body={info.body} />
+                </Fragment>
               ))}
             </>
           </Wrapper>

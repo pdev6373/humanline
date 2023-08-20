@@ -1,5 +1,6 @@
-import { FAQs } from "@/constants";
+import { Fragment } from "react";
 import { Wrapper, FAQ } from "@/components";
+import { FAQs } from "@/constants";
 
 export default function page() {
   return (
@@ -12,12 +13,14 @@ export default function page() {
       <Wrapper gap={24}>
         <>
           {FAQs.map((faq) => (
-            <FAQ
-              question={faq.question}
-              answer={faq.answer}
-              time={faq.time}
-              likes={faq.likes}
-            />
+            <Fragment key={faq.question}>
+              <FAQ
+                question={faq.question}
+                answer={faq.answer}
+                time={faq.time}
+                likes={faq.likes}
+              />
+            </Fragment>
           ))}
         </>
       </Wrapper>
