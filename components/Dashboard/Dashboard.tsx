@@ -55,7 +55,7 @@ export default function Dashboard() {
               }`}
             >
               <div className={styles.statsIconWrapper}>
-                <div className={styles.skeleton}></div>
+                <div className={styles.skeleton} />
                 <Image
                   src={stats.icon}
                   alt="stats icon"
@@ -66,7 +66,7 @@ export default function Dashboard() {
               </div>
 
               <div className={styles.growth}>
-                <div className={styles.skeleton}></div>
+                <div className={styles.skeleton} />
                 <p className={styles.growthNumber}>{stats.value}</p>
 
                 <div
@@ -96,7 +96,7 @@ export default function Dashboard() {
               </div>
 
               <div className={styles.statNameWrapper}>
-                <div className={styles.skeleton}></div>
+                <div className={styles.skeleton} />
                 <p className={styles.statName}>{stats.name}</p>
               </div>
             </div>
