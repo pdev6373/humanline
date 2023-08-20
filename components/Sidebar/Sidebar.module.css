@@ -21,8 +21,19 @@
   gap: 24px;
 }
 
-.linksWrapper {
+.navWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.linksWrapper,
+.navWrapper {
   flex: 1;
+}
+
+.navBottom {
+  margin-top: auto;
+  padding-top: 48px;
 }
 
 .dashboardLink {
@@ -74,11 +85,7 @@
   margin-top: auto;
 }
 
-/* .bottomNavInner {
-  margin-top: 48px;
-} */
-
-.helpTextWrapper {
+/* .helpTextWrapper {
   background: #e03137;
   min-width: 24px;
   aspect-ratio: 1 / 1;
@@ -86,17 +93,17 @@
   display: grid;
   place-content: center;
   padding-inline: 7.5px;
-}
+} */
 
-.helpText {
+/* .helpText {
   color: #ffffff;
   font-size: 14px;
   font-weight: 600;
   line-height: 22px;
   text-align: center;
-}
+} */
 
-.modesWrapper {
+/* .modesWrapper {
   position: relative;
   z-index: 1;
   min-height: 43px;
@@ -105,9 +112,9 @@
   border-radius: 100px;
   overflow: hidden;
   margin-top: -8px;
-}
+} */
 
-.currentMode {
+/* .currentMode {
   position: absolute;
   top: 6px;
   bottom: 6px;
@@ -118,9 +125,9 @@
   border-radius: 100px;
   transition: left 0.25s ease-in;
   z-index: 2;
-}
+} */
 
-.currentModeDark {
+/* .currentModeDark {
   left: 50%;
 }
 
@@ -130,9 +137,9 @@
   display: flex;
   border-radius: 100px;
   height: 100%;
-}
+} */
 
-.modeWrapper {
+/* .modeWrapper {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -158,4 +165,4 @@
 
 .modeTextCurrent {
   color: #ffffff;
-}
+} */

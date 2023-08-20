@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 
 export default function CreateCompanySuccessful() {
   const router = useRouter();
-
   const loginHandler = () => router.push("/login");
 
   return (

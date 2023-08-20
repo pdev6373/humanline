@@ -1,4 +1,4 @@
-import { Wrapper } from "..";
+import { HelpBodyText, Wrapper } from "..";
 import Image from "next/image";
 import styles from "./FAQ.module.css";
 
@@ -16,14 +16,9 @@ export default function FAQ({
   return (
     <Wrapper hasBorder padding={24} gap={32}>
       <>
-        <Wrapper gap={16}>
-          <>
-            <h2 className={styles.question}>{question}</h2>
-            <p className={styles.answer}>{answer}</p>
-          </>
-        </Wrapper>
+        <HelpBodyText title={question} body={answer} />
 
-        <div className={styles.faqBottom}>
+        <div className={styles.faqDetails}>
           <div className={styles.faqTimeWrapper}>
             <Image
               src="/assets/calendar.svg"

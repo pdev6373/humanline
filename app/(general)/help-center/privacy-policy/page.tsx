@@ -1,4 +1,4 @@
-import { Wrapper, PrivacyPolicy } from "@/components";
+import { HelpBodyText, Wrapper } from "@/components";
 import { PrivacyPolicies } from "@/constants";
 
 export default function page() {
@@ -7,7 +7,7 @@ export default function page() {
       <Wrapper hasBorder padding={24} gap={32}>
         <>
           {PrivacyPolicies.map((privacyPolicy) => (
-            <PrivacyPolicy
+            <HelpBodyText
               title={privacyPolicy.title}
               body={privacyPolicy.body}
             />

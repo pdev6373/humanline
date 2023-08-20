@@ -3,93 +3,44 @@ import { ShortcutsType } from "@/types";
 const Shortcuts: ShortcutsType = {
   shortcuts: [
     {
-      header: "Shortcuts Key on Windows",
-      body: [
-        {
-          shortcut: "Alt + /",
-          description: "Global Search to search an employee",
-        },
-
-        {
-          shortcut: "Alt + Shift + 0",
-          description: "Open Dashboard",
-        },
-
-        {
-          shortcut: "Alt + Shift + W",
-          description: "Open News",
-        },
-
-        {
-          shortcut: "Alt + Shift + E",
-          description: "Open Employees",
-        },
-
-        {
-          shortcut: "Alt + Shift + L",
-          description: "Open Checklists",
-        },
-
-        {
-          shortcut: "Alt + Shift + T",
-          description: "Open Time off request",
-        },
-
-        {
-          shortcut: "Alt + Shift + C",
-          description: "Open Attendance",
-        },
-
-        {
-          shortcut: "Alt + Shift + P",
-          description: "Open Payroll",
-        },
-      ],
+      windows: "Alt + /",
+      mac_os: "Option + /",
+      title: "Global Search to search an employee",
     },
-
     {
-      header: "Shortcuts Key on MacOS",
-      body: [
-        {
-          shortcut: "Option + /",
-          description: "Global Search to search an employee",
-        },
-
-        {
-          shortcut: "Option + Shift + 0",
-          description: "Open Dashboard",
-        },
-
-        {
-          shortcut: "Option + Shift + W",
-          description: "Open News",
-        },
-
-        {
-          shortcut: "Option + Shift + E",
-          description: "Open Employees",
-        },
-
-        {
-          shortcut: "Option + Shift + L",
-          description: "Open Checklists",
-        },
-
-        {
-          shortcut: "Option + Shift + T",
-          description: "Open Time off request",
-        },
-
-        {
-          shortcut: "Option + Shift + C",
-          description: "Open Attendance",
-        },
-
-        {
-          shortcut: "Option + Shift + P",
-          description: "Open Payroll",
-        },
-      ],
+      windows: "Alt + Shift + 0",
+      mac_os: "Option + Shift + 0",
+      title: "Open Dashboard",
+    },
+    {
+      windows: "Alt + Shift + W",
+      mac_os: "Option + Shift + W",
+      title: "Open News",
+    },
+    {
+      windows: "Alt + Shift + E",
+      mac_os: "Option + Shift + E",
+      title: "Open Employees",
+    },
+    {
+      windows: "Alt + Shift + L",
+      mac_os: "Option + Shift + L",
+      title: "Open Checklists",
+    },
+    {
+      windows: "Alt + Shift + T",
+      mac_os: "Option + Shift + T",
+      title: "Open Time off request",
+    },
+    {
+      windows: "Alt + Shift + C",
+      mac_os: "Option + Shift + C",
+      title: "Open Attendance",
+    },
+    {
+      windows: "Alt + Shift + P",
+      mac_os: "Option + Shift + P",
+      title: "Open Payroll",
     },
   ],
 

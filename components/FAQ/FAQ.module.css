@@ -1,18 +1,4 @@
-.question {
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 27px;
-}
-
-.answer {
-  color: #687588;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 22px;
-}
-
-.faqBottom {
+.faqDetails {
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -1,61 +1,49 @@
-import { Wrapper } from "@/components";
+import { HelpBodyText, Table, Wrapper } from "@/components";
 import { KeyboardShortcuts } from "@/constants";
-import Image from "next/image";
-import styles from "./page.module.css";
+
+const data = KeyboardShortcuts.shortcuts;
+
+const columns = [
+  {
+    header: "Shortcuts Key on Windows",
+    accessorKey: "windows",
+  },
+  {
+    header: "Shortcuts Key on MacOS",
+    accessorKey: "mac_os",
+  },
+  {
+    header: "Header title",
+    accessorKey: "title",
+  },
+];
 
 export default function page() {
   return (
-    <Wrapper type="help-center" header="Keyboard Shortcut For Humanline">
-      <Wrapper type="help-center-content">
+    <Wrapper
+      hasBackground
+      padding={32}
+      gap={32}
+      header="Keyboard Shortcut For Humanline"
+    >
+      <Wrapper hasBorder padding={24} gap={32}>
         <>
-          <div className={styles.headerWrapper}>
-            <h2 className={styles.header}>
-              A list of Keyboard Shortcuts to help you navigate Humanline
-              quicker
-            </h2>
-            <p className={styles.text}>
-              Here are {KeyboardShortcuts.shortcuts.length} Keyboard shortcuts
-              that you can use on Grove HR to save your time.
-            </p>
-          </div>
+          <HelpBodyText
+            title="A list of Keyboard Shortcuts to help you navigate Humanline
+                quicker"
+            body={`Here are ${KeyboardShortcuts.shortcuts.length} Keyboard shortcuts
+                that you can use on Grove HR to save your time.`}
+          />
 
-          <table>
-            <thead className={styles.tableHead}>
-              <tr>
-                {KeyboardShortcuts.shortcuts.map((shortcut) => (
-                  // <div className={styles.tableHeadTextWrapper}>
-                  <th className={styles.tableHeadText}>{shortcut.header}</th>
-                  //   <Image
-                  //     src="/assets/sort.svg"
-                  //     alt="sort icon"
-                  //     width={14}
-                  //     height={14}
-                  //   />
-                  // </div>
-                ))}
+          <Table tableColumns={columns} data={data} />
 
-                {/* <div className={styles.tableHeadTextWrapper}> */}
-                <th className={styles.tableHeadText}>Header title</th>
-                {/* <Image
-                  src="/assets/sort.svg"
-                  alt="sort icon"
-                  width={14}
-                  height={14}
-                /> */}
-                {/* </div> */}
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                {KeyboardShortcuts.shortcuts.map((shortcut) =>
-                  shortcut.body.map((body) => (
-                    <th className={styles.tableHeadText}>{body.shortcut}</th>
-                  ))
-                )}
-              </tr>
-            </tbody>
-          </table>
+          <Wrapper gap={32}>
+            <>
+              {KeyboardShortcuts.otherInfo.map((info) => (
+                <HelpBodyText title={info.title} body={info.body} />
+              ))}
+            </>
+          </Wrapper>
         </>
       </Wrapper>
     </Wrapper>

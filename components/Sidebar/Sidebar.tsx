@@ -33,9 +33,11 @@ export default function Sidebar() {
           </Link>
         </li>
 
-        <div>
+        <div className={styles.navWrapper}>
           {NavConstant.map((nav) => (
-            <li>
+            <li
+              className={nav.route === "/help-center" ? styles.navBottom : ""}
+            >
               <Link href={nav.route} className={styles.navLink}>
                 {nav.icon && (
                   <Image
@@ -47,20 +49,21 @@ export default function Sidebar() {
                   />
                 )}
                 <p className={styles.navName}>{nav.name}</p>
-                <Image
-                  src="/assets/down.svg"
-                  alt="down icon"
-                  width={24}
-                  height={24}
-                  className={styles.down}
-                />
+                {nav.route != "/settings" && nav.route !== "/help-center" && (
+                  <Image
+                    src="/assets/down.svg"
+                    alt="down icon"
+                    width={24}
+                    height={24}
+                    className={styles.down}
+                  />
+                )}
               </Link>
             </li>
           ))}
         </div>
 
-        <div className={styles.bottomNav}>
-          {/* <div className={styles.bottomNavInner}> */}
+        {/* <div className={styles.bottomNav}>
           <li>
             <Link href="/help-center" className={styles.navLink}>
               <Image
@@ -72,9 +75,9 @@ export default function Sidebar() {
               />
               <p className={styles.navName}>Help Center</p>
 
-              {/* <div className={styles.helpTextWrapper}>
-                  <p className={styles.helpText}>8</p>
-                </div> */}
+              // <div className={styles.helpTextWrapper}>
+              //     <p className={styles.helpText}>8</p>
+              //   </div>
             </Link>
           </li>
 
@@ -90,8 +93,7 @@ export default function Sidebar() {
               <p className={styles.navName}>Settings</p>
             </Link>
           </li>
-          {/* </div> */}
-        </div>
+        </div> */}
       </ul>
 
       {/* <div className={styles.modesWrapper}>

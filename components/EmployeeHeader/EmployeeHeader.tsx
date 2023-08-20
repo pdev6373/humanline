@@ -4,7 +4,6 @@ import { EmployeeHeaderNavType } from "@/types";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import styles from "./EmployeeHeader.module.css";
-import { useReactTable } from "@tanstack/react-table";
 
 export default function EmployeeHeader({ nav }: EmployeeHeaderNavType) {
   const [activeTabRoute, setActiveTabRoute] = useState("/");

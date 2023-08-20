@@ -1,10 +1,14 @@
-import { HTMLInputTypeAttribute } from "react";
+import { ReactNode, HTMLInputTypeAttribute } from "react";
+
+export type LayoutType = {
+  children: ReactNode;
+};
 
 type WrapperSpaceType = 0 | 16 | 24 | 32;
 
 export type WrapperType = {
   children: JSX.Element;
-  gap: WrapperSpaceType;
+  gap?: WrapperSpaceType;
   padding?: WrapperSpaceType;
   hasBorder?: boolean;
   hasBackground?: boolean;
@@ -91,10 +95,17 @@ export type LogoType = {
   height?: number;
 };
 
+export type SubNavType = {
+  name: string;
+  route: string;
+  icon?: string;
+};
+
 export type NavType = {
   name: string;
   route: string;
   icon?: string;
+  nav: SubNavType[];
 };
 
 export type ModePropertiesType = {
@@ -196,14 +207,10 @@ export interface SectionHeaderType extends PrivacyPolicyType {
   currentRouteText: string;
 }
 
-export interface ShortcutBodyType {
-  shortcut: string;
-  description: string;
-}
-
 export interface ShortcutType {
-  header: string;
-  body: ShortcutBodyType[];
+  windows: string;
+  mac_os: string;
+  title: string;
 }
 
 export interface ShortcutsType {

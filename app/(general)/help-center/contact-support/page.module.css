@@ -5,20 +5,7 @@
   line-height: 22px;
 }
 
-.title {
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 27px;
-}
-
-.body {
-  color: #687588;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 22px;
-}
-
 .mail {
   color: #27a376;
+  text-decoration: underline;
 }

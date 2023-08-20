@@ -1,0 +1,38 @@
+.table {
+  width: 100%;
+}
+
+.tableHead {
+  background: #323b49;
+}
+
+.borderLeftRadius {
+  border-radius: 10px 0 0 10px;
+}
+
+.tableHeadTextWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 18.5px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tableHeadText {
+  color: #cbd5e0;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0.2px;
+  text-align: left;
+}
+
+.tableBodyText {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 19px;
+  padding: 19.5px 16px;
+}

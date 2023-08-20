@@ -4,9 +4,9 @@ import { WrapperHeading } from "..";
 
 export default function Wrapper({
   children,
-  gap,
   paddingBlock,
   header,
+  gap = 0,
   padding = 0,
   hasBorder = false,
   hasBackground = false,

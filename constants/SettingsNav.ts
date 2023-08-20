@@ -1,6 +1,6 @@
-import { NavType } from "@/types";
+import { SubNavType } from "@/types";
 
-const SettingsNav: NavType[] = [
+const SettingsNav: SubNavType[] = [
   {
     name: "Company Info",
     icon: "/assets/info.svg",

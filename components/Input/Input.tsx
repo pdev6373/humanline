@@ -1,5 +1,4 @@
 "use client";
-
 import { InputType } from "@/types";
 import styles from "./Input.module.css";
 import Image from "next/image";
