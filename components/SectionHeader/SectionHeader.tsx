@@ -4,16 +4,16 @@ import styles from "./SectionHeader.module.css";
 
 export default function SectionHeader({
   title,
-  body,
-  currentRouteText,
+  currentRouteName,
+  description,
   homeRoute,
 }: SectionHeaderType) {
   return (
     <div className={styles.wrapper}>
       <SectionHeading
         title={title}
-        body={body}
-        currentRouteText={currentRouteText}
+        currentRouteName={currentRouteName}
+        description={description}
         homeRoute={homeRoute}
       />
       <Search placeholder="Search what you need" type="section" />

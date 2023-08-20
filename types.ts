@@ -103,9 +103,10 @@ export type SubNavType = {
 
 export type NavType = {
   name: string;
+  description: string;
   route: string;
   icon?: string;
-  nav: SubNavType[];
+  subRoutes: SubNavType[];
 };
 
 export type ModePropertiesType = {
@@ -202,9 +203,11 @@ export interface PrivacyPolicyType {
 
 export interface ShortcutsOtherInfoType extends PrivacyPolicyType {}
 
-export interface SectionHeaderType extends PrivacyPolicyType {
+export interface SectionHeaderType {
+  title: string;
+  currentRouteName: string;
+  description: string;
   homeRoute: string;
-  currentRouteText: string;
 }
 
 export interface ShortcutType {

@@ -1,25 +1,21 @@
 import Link from "next/link";
 import styles from "./Sectionheading.module.css";
 import Image from "next/image";
+import { SectionHeaderType } from "@/types";
 
 export default function Sectionheading({
   title,
-  body,
-  currentRouteText,
+  description,
+  currentRouteName,
   homeRoute,
-}: {
-  title: string;
-  body: string;
-  homeRoute: string;
-  currentRouteText: string;
-}) {
+}: SectionHeaderType) {
   return (
     <div className={styles.wrapper}>
       <h3 className={styles.header}>{title}</h3>
-      {currentRouteText.length ? (
+      {title !== currentRouteName ? (
         <div className={styles.textWrapper}>
           <Link href={homeRoute} className={styles.text}>
-            {body}
+            {title}
           </Link>
           <Image
             src="/assets/right.svg"
@@ -28,10 +24,10 @@ export default function Sectionheading({
             height={16}
             className={styles.icon}
           />
-          <p className={styles.routeText}>{currentRouteText}</p>
+          <p className={styles.routeText}>{currentRouteName}</p>
         </div>
       ) : (
-        <p className={styles.text}>{body}</p>
+        <p className={styles.text}>{description}</p>
       )}
     </div>
   );

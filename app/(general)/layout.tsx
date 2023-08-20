@@ -21,22 +21,44 @@ export const metadata: Metadata = {
 
 type PageHeaderType = {
   title: string;
+  description: string;
+  currentRouteName: string;
+  homeRoute: string;
 };
 
 export default function RootLayout({ children }: LayoutType) {
   const pathname = usePathname();
-  const [pageHeader, setPageHeader] = useState<PageHeaderType>(x());
-  console.log(pathname);
+  const [pageHeader, setPageHeader] = useState<PageHeaderType>(
+    pageHeaderHandler()
+  );
 
   useEffect(() => {
-    setPageHeader(x());
+    setPageHeader(pageHeaderHandler());
   }, [pathname]);
 
-  function x() {
-    const currentNav = NavConstant.find((nav) => pathname.includes(nav.route));
+  function pageHeaderHandler(): PageHeaderType {
+    const currentNav = NavConstant.find((nav) => pathname === nav.route);
+
+    if (currentNav)
+      return {
+        title: currentNav.name,
+        currentRouteName: currentNav.name,
+        description: currentNav.description,
+        homeRoute: currentNav.route,
+      };
+
+    const currentNavParent = NavConstant.find((nav) =>
+      pathname.includes(nav.route)
+    )!;
+    const currentSubNav = currentNavParent.subRoutes.find(
+      (subNav) => pathname === subNav.route
+    )!;
 
     return {
-      title: currentNav?.name || "",
+      title: currentNavParent.name,
+      currentRouteName: currentSubNav?.name,
+      description: currentSubNav?.name,
+      homeRoute: currentNavParent.route,
     };
   }
 
@@ -54,9 +76,9 @@ export default function RootLayout({ children }: LayoutType) {
               <>
                 <SectionHeader
                   title={pageHeader.title}
-                  body="Manage your dashboard here"
-                  currentRouteText=""
-                  homeRoute=""
+                  currentRouteName={pageHeader.currentRouteName}
+                  description={pageHeader.description}
+                  homeRoute={pageHeader.homeRoute}
                 />
 
                 {children}
