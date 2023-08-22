@@ -5,9 +5,6 @@ import Image from "next/image";
 import { useState, useLayoutEffect } from "react";
 import { DropDown, Wrapper } from "..";
 import { countries } from "countries-list";
-import Countey from "i18n-iso-countries";
-
-console.log(Countey.getNames("en", { select: "official" }));
 
 const countryPhoneCode = Object.entries(countries).map(([key, value]) => ({
   icon: value.emoji,
