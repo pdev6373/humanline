@@ -1,20 +1,14 @@
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 0.71em;
-  font-weight: 500;
-}
-
-.wrapper,
-.inputWrapper {
-  font-size: var(--fs-300);
-  line-height: var(--lh-300);
-}
-
 .labelWrapper {
   display: flex;
   align-items: center;
-  gap: 0.14em;
+  gap: 2px;
+}
+
+.label {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
 }
 
 .required {
@@ -22,28 +16,49 @@
 }
 
 .inputWrapper,
-.inputWrapperError {
-  border: var(--bdr);
-  border-radius: var(--br);
-  overflow: hidden;
+.textareaWrapper {
+  border: 1px solid #687588;
+  border-radius: 10px;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.inputWrapperError {
-  border: var(--bdr-alert);
+.textareaWrapper {
+  padding: 0;
 }
 
-.inputWrapper:focus-within {
-  border: var(--bdr-secondary);
+.inputWrapper:focus-within,
+.textareaWrapper:focus-within {
+  border: 1px solid #27a376;
+}
+
+.input:disabled,
+.inputWrapper:has(.input:disabled) {
+  cursor: pointer;
 }
 
 .input {
-  width: 100%;
-  padding: var(--sp-500) var(--sp-600);
-  color: #fff;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  flex: 1;
+  padding-block: 8px;
+}
+
+.textarea {
+  min-height: 120px;
+  padding: 16px 20px;
+}
+
+.inputWrapperError {
+  border: 1px solid #e03137;
 }
 
 .input::placeholder {
-  color: var(--clr-input);
+  color: #687588;
 }
 
 .errors,
@@ -87,4 +102,26 @@
 
 .requirementMetError {
   color: var(--clr-success);
+}
+
+.phoneInputWrapper {
+  display: flex;
+  gap: 16px;
+}
+
+.phoneCodeWrapper,
+.phoneNumberWrapper {
+  flex-grow: 1;
+}
+
+.phoneCodeWrapper {
+  max-width: 120px;
+  flex-shrink: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.downIcon {
+  filter: invert(100%) sepia(6%) saturate(641%) hue-rotate(218deg)
+    brightness(106%) contrast(106%);
 }

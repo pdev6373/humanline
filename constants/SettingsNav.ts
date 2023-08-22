@@ -1,63 +1,63 @@
-import { SubNavType } from "@/types";
+import { SettingsNavType } from "@/types";
 
-const SettingsNav: SubNavType[] = [
+const SettingsNav: SettingsNavType[] = [
   {
-    name: "Company Info",
     icon: "/assets/info.svg",
+    name: "Company Info",
     route: "/settings",
   },
 
   {
-    name: "Offices",
     icon: "/assets/building.svg",
+    name: "Offices",
     route: "/settings/offices",
   },
 
   {
-    name: "Department",
     icon: "/assets/global.svg",
+    name: "Department",
     route: "/settings/department",
   },
 
   {
-    name: "Job Titles",
     icon: "/assets/briefcase.svg",
+    name: "Job Titles",
     route: "/settings/job-titles",
   },
 
   {
-    name: "Work Schedule",
     icon: "/assets/calendar.svg",
+    name: "Work Schedule",
     route: "/settings/work-schedule",
   },
 
   {
-    name: "Permission",
     icon: "/assets/settings.svg",
+    name: "Permission",
     route: "/settings/permission",
   },
 
   {
-    name: "Integration",
     icon: "/assets/integration.svg",
+    name: "Integration",
     route: "/settings/integration",
   },
 
-  {
-    name: "subscription",
-    icon: "/assets/flash.svg",
-    route: "/settings/subscription",
-  },
+  // {
+  //   icon: "/assets/flash.svg",
+  //   name: "subscription",
+  //   route: "/settings/subscription",
+  // },
 
   {
-    name: "Password",
     icon: "/assets/lock.svg",
+    name: "Password",
     route: "/settings/password",
   },
 
   {
-    name: "Notification",
     icon: "/assets/bell.svg",
+    name: "Notification",
     route: "/settings/notification",
   },
 ];

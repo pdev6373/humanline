@@ -5,7 +5,12 @@ export type LayoutType = {
   children: ReactNode;
 };
 
-type WrapperSpaceType = 0 | 16 | 24 | 32;
+export type HeaderNavType = {
+  name: "Documents" | "News" | "Payslip" | "Report";
+  route: "/documents" | "/news" | "/playslip" | "/report";
+};
+
+type WrapperSpaceType = 0 | 4 | 10 | 16 | 24 | 32;
 export type WrapperType = {
   children: JSX.Element;
   hasBackground?: boolean;
@@ -48,40 +53,134 @@ export type TableType<Type> = {
 
 //
 
+type OfficeOtherInfoype = {
+  title: string;
+  value: string;
+};
+export type OfficeConstantType = {
+  name: string;
+  location: string;
+  isHQ: boolean;
+  otherInfo: OfficeOtherInfoype[];
+};
+
+export type ChangePasswordType = {
+  label: string;
+  placeholder: string;
+  value: string;
+  isRequired: boolean;
+};
+
 interface PlainButtonType {
   children: any;
   onClick: any;
 }
 
-interface PlainInputType {
-  value: string;
-  setValue: any;
-}
+export type JobTitlesType = {
+  title: string;
+  numberOfEmployees: number;
+  isActive: boolean;
+};
 
-export interface InputType extends PlainInputType {
+export type PhoneNumberType = {
+  countryCode: string;
+  number: string;
+};
+
+type FormInputType = HTMLInputTypeAttribute | "text-area";
+
+export type InputType = {
   label: string;
   placeholder: string;
-  type: HTMLInputTypeAttribute;
+  type: FormInputType;
   errors: string[];
   isRequired?: boolean;
   displayMetRequirements?: boolean;
   requirements?: string[];
-}
+  value: string | PhoneNumberType;
+  setValue: any;
+  isDisabled?: boolean;
+  icon?: string;
+};
 
 export interface ButtonType extends PlainButtonType {
   isDisabled?: boolean;
-  type?: "primary" | "secondary";
+  type?:
+    | "primary"
+    | "secondary"
+    | "primary-small"
+    | "primary-small-dark"
+    | "secondary-small";
+  icon?: string;
 }
 
 export interface SocialButtonType extends PlainButtonType {
   socialIcon: string;
 }
 
+export type ChipType = {
+  children: string;
+};
+
+export type NotificationsConstantType = {
+  title: string;
+  body: string;
+  isActive: boolean;
+};
+
+export type TextsType = {
+  children: string | JSX.Element;
+  type: "heading" | "body";
+  size: 12 | 14 | 20;
+  variation: "light" | "dark";
+  weight: "400" | "500" | "600" | "700";
+  letterSpacing?: 0.2 | 0.3;
+};
+
+export type RecruitmentApplicantsType = {
+  name: string;
+  image: string;
+  email: string;
+  phoneNumber: string;
+  cv: string;
+  createdTime: string;
+  stage:
+    | "applied"
+    | "screening"
+    | "1st interview"
+    | "2nd interview"
+    | "hiring"
+    | "rejected";
+};
+export type RecruitmentType = {
+  title: string;
+  isActive: boolean;
+  position: string;
+  company: string;
+  createdTime: string;
+  applicants: RecruitmentApplicantsType[];
+};
+
 export interface CheckboxType {
   isChecked: boolean;
   setIsChecked: any;
   children: any;
 }
+
+export type DropdownListType = {
+  icon?: string;
+  value: string;
+};
+
+export type DropdownType = {
+  list: DropdownListType[];
+  currentValue: string;
+};
+
+export type SwitchType = {
+  isActive: boolean;
+  onClick: any;
+};
 
 export interface SuccessType {
   title: string;
@@ -125,10 +224,17 @@ export type LogoType = {
   height?: number;
 };
 
-export type SubNavType = {
+export type SettingsNavType = {
+  icon?: string;
   name: string;
   route: string;
-  icon?: string;
+};
+
+export type HelpCenterNavType = {
+  icon: string;
+  name: string;
+  body: string;
+  route: string;
 };
 
 export type NavType = {
@@ -136,7 +242,7 @@ export type NavType = {
   description: string;
   route: string;
   icon?: string;
-  subRoutes: SubNavType[];
+  subRoutes: SettingsNavType[] | HelpCenterNavType[];
 };
 
 export type ModePropertiesType = {
@@ -212,13 +318,6 @@ export type EmployeeDetailsPageType = {
   };
 };
 
-export type HelpCenterListType = {
-  icon: string;
-  title: string;
-  body: string;
-  route: string;
-};
-
 export interface PrivacyPolicyType {
   title: string;
   body: string;
@@ -240,13 +339,9 @@ export interface ShortcutsType {
 
 export interface CompanyInfoBodyType {
   name: string;
-  value:
-    | string
-    | {
-        countryCode: string;
-        number: string;
-      };
+  value: string | PhoneNumberType;
   isRequired: boolean;
+  type: FormInputType;
 }
 
 export interface CompanyInfoType {

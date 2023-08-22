@@ -1,12 +1,18 @@
 import { LayoutType } from "@/types";
-import { SettingsAside } from "@/components";
+import { SettingsAside, Wrapper } from "@/components";
 import styles from "./layout.module.css";
 
 export default function SettingsLayout({ children }: LayoutType) {
   return (
     <div className={styles.wrapper}>
-      <SettingsAside />
-      <section className={styles.main}>{children}</section>
+      <div className={styles.aside}>
+        <SettingsAside />
+      </div>
+      <div className={styles.main}>
+        <Wrapper hasBackground padding={24} gap={24}>
+          <>{children}</>
+        </Wrapper>
+      </div>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import { NavType } from "@/types";
+import HelpCenterNav from "./HelpCenterNav";
 import SettingsNav from "./SettingsNav";
 
 const NavConstant: NavType[] = [
@@ -37,13 +38,13 @@ const NavConstant: NavType[] = [
     icon: "/assets/card-send.svg",
     subRoutes: [],
   },
-  {
-    name: "Performance",
-    description: "",
-    route: "/performance",
-    icon: "/assets/trending-up.svg",
-    subRoutes: [],
-  },
+  // {
+  //   name: "Performance",
+  //   description: "",
+  //   route: "/performance",
+  //   icon: "/assets/trending-up.svg",
+  //   subRoutes: [],
+  // },
   {
     name: "Recruitment",
     description: "",
@@ -56,24 +57,7 @@ const NavConstant: NavType[] = [
     description: "What can we help you with?",
     route: "/help-center",
     icon: "/assets/question.svg",
-    subRoutes: [
-      {
-        name: "FAQ",
-        route: "/help-center/faq",
-      },
-      {
-        name: "Keyboard Shortcut",
-        route: "/help-center/keyboard-shortcut",
-      },
-      {
-        name: "Contact Support",
-        route: "/help-center/contact-support",
-      },
-      {
-        name: "Privacy Policy",
-        route: "/help-center/privacy-policy",
-      },
-    ],
+    subRoutes: HelpCenterNav,
   },
   {
     name: "Settings",

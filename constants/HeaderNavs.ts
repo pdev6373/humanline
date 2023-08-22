@@ -1,6 +1,6 @@
-import { NavType } from "@/types";
+import { HeaderNavType } from "@/types";
 
-const HeaderNavs: NavType[] = [
+const HeaderNavs: HeaderNavType[] = [
   {
     name: "Documents",
     route: "/documents",

@@ -2,9 +2,10 @@ import { Fragment } from "react";
 import { ShortcutType } from "@/types";
 import { Wrapper, HelpBodyText, Table } from "@/components";
 import { KeyboardShortcuts } from "@/constants";
+import { ColumnDef } from "@tanstack/react-table";
 
 const data = KeyboardShortcuts.shortcuts;
-const columns = [
+const columns: ColumnDef<ShortcutType>[] = [
   {
     header: "Shortcuts Key on Windows",
     accessorKey: "windows",

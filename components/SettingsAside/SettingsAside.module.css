@@ -1,19 +1,4 @@
-.aside,
-.main {
-  flex: 1;
-  background: #1f2937;
-  border-radius: 16px;
-  padding: 24px;
-}
-
-.aside {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: 300px;
-}
-
-.asideLink {
+.link {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -22,12 +7,12 @@
   transition: padding-left 0.15s ease-in;
 }
 
-.asideLinkCurrent {
+.linkCurrent {
   background: #323b49;
   padding-left: 16px;
 }
 
-.asideLinkText {
+.linkText {
   color: #ffffff;
   font-size: 14px;
   font-weight: 700;
@@ -35,7 +20,13 @@
   letter-spacing: 0.2px;
 }
 
-.asideIcon {
+.icon {
   filter: invert(69%) sepia(12%) saturate(407%) hue-rotate(174deg)
     brightness(98%) contrast(92%);
+  transition: filter 0.15s ease-in;
+}
+
+.iconCurrent {
+  filter: invert(45%) sepia(78%) saturate(2144%) hue-rotate(121deg)
+    brightness(95%) contrast(91%);
 }

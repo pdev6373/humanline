@@ -16,6 +16,14 @@
   border: 1px solid #323b49;
 }
 
+.padding4 {
+  padding: 4px;
+}
+
+.padding10 {
+  padding: 10px;
+}
+
 .padding16 {
   padding: 16px;
 }
@@ -28,6 +36,14 @@
   padding: 32px;
 }
 
+.paddingBlock4 {
+  padding-block: 4px;
+}
+
+.paddingBlock10 {
+  padding-block: 10px;
+}
+
 .paddingBlock16 {
   padding-block: 16px;
 }
@@ -38,6 +54,14 @@
 
 .paddingBlock32 {
   padding-block: 32px;
+}
+
+.gap4 {
+  gap: 4px;
+}
+
+.gap10 {
+  gap: 10px;
 }
 
 .gap16 {

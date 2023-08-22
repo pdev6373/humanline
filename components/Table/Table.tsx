@@ -30,11 +30,17 @@ export default function Table<Type>({ data, tableColumns }: TableType<Type>) {
       <thead className={styles.tableHead}>
         {table.getHeaderGroups().map((headerGroup) => (
           <tr key={headerGroup.id}>
-            {headerGroup.headers.map((header, index) => (
+            {headerGroup.headers.map((header, index, array) => (
               <th
                 key={header.id}
                 onClick={header.column.getToggleSortingHandler()}
-                className={!index ? styles.borderLeftRadius : ""}
+                className={
+                  !index
+                    ? styles.borderLeftRadius
+                    : index === array.length - 1
+                    ? styles.borderRightRadius
+                    : ""
+                }
               >
                 {header.isPlaceholder ? null : (
                   <div className={styles.tableHeadTextWrapper}>

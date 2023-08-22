@@ -1,13 +1,15 @@
 "use client";
 import { SettingsConstant } from "@/constants";
 import styles from "./page.module.css";
-import { Input } from "@/components";
+import { Button, Input, Text } from "@/components";
 
 export default function page() {
   const companyInfo = SettingsConstant.companyInfo;
   return (
-    <div className={styles.wrapper}>
-      <h2 className={styles.header}>{companyInfo.title}</h2>
+    <>
+      <Text size={20} type="heading" variation="light" weight="700">
+        {companyInfo.title}
+      </Text>
 
       <div className="line"></div>
 
@@ -15,36 +17,24 @@ export default function page() {
         {companyInfo.body.map((info) => (
           <div
             key={info.name}
-            className={[
-              styles.formInput,
-              info.name.toLowerCase() == "company overview" &&
-                styles.formInputFull,
-            ].join(" ")}
+            className={info.type === "text-area" ? styles.textareaWrapper : ""}
           >
-            {typeof info.value === "string" ? (
-              <Input
-                value={info.value}
-                placeholder=""
-                errors={[""]}
-                label={info.name}
-                setValue={() => {}}
-                type="text"
-              />
-            ) : (
-              <Input
-                value={info.value.number}
-                placeholder=""
-                errors={[""]}
-                label={info.name}
-                setValue={() => {}}
-                type="text"
-              />
-            )}
+            <Input
+              value={info.value}
+              placeholder=""
+              errors={[""]}
+              label={info.name}
+              setValue={() => {}}
+              type={info.type}
+              isRequired={info.isRequired}
+            />
           </div>
         ))}
 
-        <button className={styles.button}>Save</button>
+        <Button type="primary-small-dark" onClick={() => {}}>
+          Save
+        </Button>
       </form>
-    </div>
+    </>
   );
 }

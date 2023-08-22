@@ -1,19 +1,43 @@
-.button,
-.buttonSecondary {
-  font-size: var(--fs);
-  line-height: var(--lh);
-  border-radius: var(--br);
-  background: var(--bg-secondary);
-  color: var(--clr-button);
-  padding: calc(var(--sp) + 2px);
+.button {
+  font-size: 16px;
   font-weight: 700;
-  letter-spacing: 0.01875em;
+  line-height: 24px;
+  letter-spacing: 0.3px;
+  border-radius: 10px;
+  padding: 16px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.buttonIcon {
+  filter: invert(98%) sepia(20%) saturate(76%) hue-rotate(185deg)
+    brightness(114%) contrast(100%);
+}
+
+.buttonPrimary,
+.buttonPrimarySmall {
+  background: #ffffff;
+  color: #111827;
 }
 
 .buttonSecondary {
   background: transparent;
-  outline: 1px solid #fff;
   color: #fff;
+  outline: 1px solid #fff;
+}
+
+.buttonPrimarySmall,
+.buttonPrimarySmallDark {
+  padding: 12px;
+  max-width: 150px;
+}
+
+.buttonPrimarySmallDark {
+  background: #111827;
+  color: #ffffff;
 }
 
 .button:disabled {

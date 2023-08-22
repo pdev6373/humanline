@@ -4,9 +4,11 @@
   gap: 24px;
 }
 
+.aside,
 .main {
   flex: 1;
-  background: #1f2937;
-  border-radius: 16px;
-  padding: 24px;
+}
+
+.aside {
+  max-width: 300px;
 }

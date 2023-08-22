@@ -1,18 +1,18 @@
 import { Fragment } from "react";
 import { HelpCard } from "@/components";
-import { HelpCenterList } from "@/constants";
+import { HelpCenterNav } from "@/constants";
 import styles from "./page.module.css";
 
 export default function HelpCenter() {
   return (
     <div className={styles.wrapper}>
-      {HelpCenterList.map((help) => (
-        <Fragment key={help.title}>
+      {HelpCenterNav.map((nav) => (
+        <Fragment key={nav.name}>
           <HelpCard
-            icon={help.icon}
-            title={help.title}
-            body={help.body}
-            route={help.route}
+            icon={nav.icon}
+            title={nav.name}
+            body={nav.body}
+            route={nav.route}
           />
         </Fragment>
       ))}

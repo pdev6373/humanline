@@ -28,6 +28,10 @@ export { default as SectionHeader } from "./SectionHeader/SectionHeader";
 export { default as SettingsAside } from "./SettingsAside/SettingsAside";
 export { default as Search } from "./Search/Search";
 export { default as SectionHeading } from "./SectionHeading/Sectionheading";
+export { default as Text } from "./Text/Text";
+export { default as Switch } from "./Switch/Switch";
+export { default as Chip } from "./Chip/Chip";
+export { default as DropDown } from "./DropDown/DropDown";
 
 // HELP CENTER
 export { default as HelpCard } from "./HelpCard/HelpCard";
