@@ -1,0 +1,55 @@
+.wrapper {
+  position: relative;
+  width: 44px;
+  position: relative;
+  height: 26px;
+  border-radius: 1000px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.switch,
+.switchOn {
+  width: 88px;
+  position: absolute;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  left: -44px;
+}
+
+.switch {
+  transition: left 0.15s ease-in;
+}
+
+.switchOn {
+  left: 0;
+}
+
+.switchIcon {
+  position: relative;
+  z-index: 1;
+  right: -13px;
+  transition: right 0.15s ease-in;
+}
+
+.switchOn .switchIcon {
+  right: 13px;
+}
+
+.switchLight,
+.switchDark {
+  position: absolute;
+  width: 44px;
+  height: 100%;
+}
+
+.switchLight {
+  background: #27a376;
+  left: 0;
+}
+
+.switchDark {
+  background: #323b49;
+  right: 0;
+}

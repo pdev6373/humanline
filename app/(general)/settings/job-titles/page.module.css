@@ -1,0 +1,52 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.searchWrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.search,
+.addNewButton {
+  /* flex: 1; */
+  flex-grow: 1;
+}
+
+.search {
+  max-width: 278px;
+}
+
+.addNewButton {
+  max-width: 145px;
+  display: flex;
+}
+
+.actionsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.actionWrapperEdit,
+.actionWrapperDelete {
+  padding: 7px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.actionWrapperEdit {
+  background: #2f78ee;
+}
+
+.actionWrapperDelete {
+  background: #e03137;
+}
+
+.actionIcon {
+  filter: invert(98%) sepia(20%) saturate(76%) hue-rotate(185deg)
+    brightness(114%) contrast(100%);
+}

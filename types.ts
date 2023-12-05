@@ -167,14 +167,19 @@ export interface CheckboxType {
   children: any;
 }
 
+export type CountryCodeType = {
+  code: string;
+};
 export type DropdownListType = {
-  icon?: string;
   value: string;
+  extra?: CountryCodeType | string;
 };
 
 export type DropdownType = {
   list: DropdownListType[];
   currentValue: string;
+  type: "phone" | "others";
+  onClick: any;
 };
 
 export type SwitchType = {

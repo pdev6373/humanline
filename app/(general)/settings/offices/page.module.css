@@ -1,0 +1,63 @@
+.nameWrapper,
+.nameWrapperInner,
+.location {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nameWrapper,
+.location {
+  justify-content: space-between;
+}
+
+.name {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+}
+
+.hqTag {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0.2px;
+  padding: 2.5px 5px;
+  background: #27a376;
+  border-radius: 6px;
+  transition: opacity 0.15s ease-in;
+}
+
+.noDisplay {
+  opacity: 0;
+}
+
+.locationText {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.infoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title {
+  color: #687588;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  min-width: 200px;
+}
+
+.value {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+}

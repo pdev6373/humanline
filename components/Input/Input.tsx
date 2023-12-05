@@ -1,17 +1,17 @@
 "use client";
-import { InputType, PhoneNumberType } from "@/types";
+import { DropdownListType, InputType, PhoneNumberType } from "@/types";
 import styles from "./Input.module.css";
 import Image from "next/image";
 import { useState, useLayoutEffect } from "react";
 import { DropDown, Wrapper } from "..";
-import { countries } from "countries-list";
+import { all } from "country-codes-list";
 
-const countryPhoneCode = Object.entries(countries).map(([key, value]) => ({
-  icon: value.emoji,
-  value: value.phone,
+const countryDetails: DropdownListType[] = all().map((country) => ({
+  value: country.countryCallingCode,
+  extra: {
+    code: country.countryCode,
+  },
 }));
-
-// console.log(countryPhoneCode);
 
 export default function Input({
   label,
@@ -27,6 +27,8 @@ export default function Input({
   const [hasValueChangedOnce, setHasValueChangedOnce] = useState(false);
   const [isBlur, setIsBlur] = useState(false);
   const isValueString = typeof value === "string";
+  const [phoneNumber, setPhoneNumber] = useState<DropdownListType>();
+  const [showDropdown, setShowDropdown] = useState(false);
 
   useLayoutEffect(() => {
     isValueString
@@ -43,6 +45,13 @@ export default function Input({
         hasValueChangedOnce &&
         isBlur &&
         !!value.number.length;
+
+  const dropDownHandler = (item: any) => {
+    setPhoneNumber(item);
+    setShowDropdown(false);
+  };
+
+  console.log(phoneNumber);
 
   return (
     <Wrapper gap={10}>
@@ -76,13 +85,23 @@ export default function Input({
                 showErrorHandler() && styles.inputWrapperError,
               ].join(" ")}
             >
-              <div className={styles.input}>
-                {(value as PhoneNumberType).countryCode}
+              <div
+                className={styles.input}
+                onClick={() => setShowDropdown(true)}
+              >
+                {/* {(value as PhoneNumberType).countryCode} */}
+                {`+${phoneNumber?.value}`}
               </div>
-              <DropDown
-                list={countryPhoneCode}
-                currentValue={(value as PhoneNumberType).countryCode}
-              />
+              {showDropdown && (
+                <DropDown
+                  list={countryDetails}
+                  currentValue={phoneNumber?.value || ""}
+                  type="phone"
+                  onClick={(item: any) => {
+                    dropDownHandler(item);
+                  }}
+                />
+              )}
             </div>
 
             <div

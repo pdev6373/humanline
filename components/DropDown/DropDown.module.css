@@ -1,0 +1,44 @@
+.wrapper {
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 0;
+  box-shadow: 5px 5px 50px 0px #1a202c;
+  background: #1f2937;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 200px;
+  min-width: 200px;
+  overflow-y: auto;
+}
+
+.phoneWrapper {
+  padding: 10px;
+  gap: 6px;
+}
+
+.item {
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.itemPhone {
+  padding: 10px;
+}
+
+.itemCurrent,
+.item:hover {
+  background: #323b49;
+}
+
+.itemMain {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
