@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "./EmployeeDetailsTable.module.css";
-
 import { EmployeeDetailsListType } from "@/types";
 
 export default function EmployeeDetailsTable({
