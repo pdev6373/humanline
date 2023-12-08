@@ -11,8 +11,8 @@ import { NumberStats } from "@/constants";
 // } from "recharts";
 import { VictoryChart, VictoryLine } from "victory";
 // import { VictoryChart } from "victory-chart";
-import styles from "./Dashboard.module.css";
 import Image from "next/image";
+import styles from "./Dashboard.module.css";
 
 const data = [
   { x: 5, y: 43000 },
